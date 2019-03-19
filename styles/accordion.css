@@ -1,4 +1,4 @@
-#accordion-container {
+/* #accordion-container {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -24,7 +24,6 @@
   font-size: 1em;
 }
 #accordion-container form {
-  /* display: none; */
 }
 
 #accordion-container a {
@@ -86,4 +85,4 @@
 
 #contact:target+p {
   height: 180px;
-}
+} */

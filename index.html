@@ -6,17 +6,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+  <!-- CSS dependencies -->
   <link rel="stylesheet" href="./styles/bootstrap-4.3.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/fontawesome-free-5.7.2-web/fontawesome-free-5.7.2-web/css/all.css">
+
+  <!-- JS dependencies -->
+  <script src="./styles/js/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./styles/js/popper.min.js"></script>
+  <script src="./styles/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="./styles/accordion.css">
 
-  <script src="./styles/js/jquery-3.3.1.min.js"></script>
+  <!-- Custom JS -->
   <script src="./styles/js/main.js"></script>
 
-  <script src="./styles/js/popper.min.js"></script>
-  <script src="./styles/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -136,7 +142,7 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-sm-6">
-              <div id="accordion-container">
+              <!-- <div id="accordion-container">
 
                 <section>
                   <a href="#contact" id="contact" data-toggle="collapse" data-target="#accordion-form1">
@@ -248,12 +254,125 @@
                   </div>
                 </section>
 
-              </div>
+              </div> -->
 
-
+              <ul id="accordion" class="accordion">
+                <li>
+                  <div class="link"><i class="fa fa-database"></i>S.D.T.T.<i class="fa fa-chevron-down"></i></div>
+                  <ul class="submenu">
+                    <!--   Trainer Confirmation -->
+                    <li>
+                      <table>
+                        <tr>
+                          <td>
+                            <class="hfas fas fa-user-tie" title="Trainer Name"> <label>Trainer Name</label></class>
+                          </td>
+                          <td>
+                            <datalist id="trainerdatalist">
+                              <option value="Mahesh Rajput">Stevie Nicks</option>
+                              <option value="Some Guy">John Travolta</option>
+                              <option value="Copyrighted Character">Yo Noid!</option>
+                            </datalist>
+                            <input type="text" name="trainer" list="trainerdatalist" />
+                          </td>
+                        <tr>
+                          <td>
+                            <class="hfas fas fa-check" title="Trainer Acceptance"><label>Trainer Acceptance</label></class>
+                          </td>
+                          <td>
+                            <input type="checkbox" />
+                          </td>
+                        </tr>
+                        </tr>
+                      </table>
+                    </li>
+                    <!--   Schedule Confirmation  -->
+                    <li>
+                      <table>
+                        <tr>
+                          <td>
+                            <label>Start</label>
+                            <input type="text" class="datepicker">
+                          </td>
+                          <td>
+                            <label>End</label>
+                            <input type="text" class="datepicker">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" name="Classroom" value="classroom"> Classroom </td>
+                          <td><input type="checkbox" name="Online" value="online"> Online </td>
+                          <td><input type="checkbox" name="Virtual" value="classroom"> Virtual </td>
+                        </tr>
+                      </table>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="link approval" data-dec="approved"><i class="fa fa-code"></i>P.M. Approved<i class="fa fa-chevron-down"></i></div>
+                </li>
+                <li>
+                  <div class="link"><i class="fas fa-cloud"></i>Logistics<i class="fa fa-chevron-down"></i></div>
+                  <ul class="submenu">
+                    <form>
+                      <table>
+                        <tr>
+                          <td>
+                            <class="hfas fas fa-map-marker" title="Location"> Enter Location</class>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>City: </label><input type="text" style="width: 90px" id=bottomdetails; />
+                            <br>
+                            <label>State: </label><input type="text" style="width: 30px" id=bottomdetails; />
+                            <br>
+                            <label>Country: </label><input type="text" style="width: 90px" id=bottomdetails; />
+                            <br>
+                            <label>Zip: </label><input type="text" style="width: 90px" id=bottomdetails; /></td>
+                        </tr>
+                      </table>
+                      <br>
+                      <table>
+                        <tr>
+                          <td>
+                            <class="hfas fas fa-book" title="Classroom">Enter Room Number</class>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><label>Room Number: </label><input type="text"></td>
+                        </tr>
+                      </table>
+                      <br>
+                      <class="hfas fas">Or</class>
+                        <br>
+                        <br>
+                        <table>
+                          <tr>
+                            <td>
+                              <class="hfas fas fa-desktop" title="Online">Enter Class URL</class>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <class="hfas fas"><label>URL: </label><input type="text" />
+                            </td>
+                          </tr>
+                        </table>
+                        <br>
+                        <table>
+                          <tr>
+                            <td>
+                              <class="hfas fas">Training Summary: <br><br></ve><textarea style="height: 140px"></textarea>
+                            </td>
+                          </tr>
+                        </table>
+                    </form>
+                  </ul>
+                </li>
+              </ul>
             </div>
             <div class="col-sm-6">Summary of steps completed goes here.
-
               <div class="card proc-card">
                 <div class="card-header">10002 </div>
                 <div class="card-body proc-card-body">
@@ -272,7 +391,6 @@
                   Training Summary <br>
                   <hr>
                   <p id="status">Status:</p>
-
                 </div>
               </div>
             </div>
