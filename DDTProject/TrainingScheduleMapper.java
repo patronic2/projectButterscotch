@@ -18,8 +18,8 @@ public class TrainingScheduleMapper implements RowMapper<TrainingSchedule>
 		ts.setTraining_time_zone(result.getString(6));
 		ts.setTraining_location(result.getString(7));
 		ts.setTraining_room_number(result.getString(8));
-		ts.setTraining_start_date(result.getDate(9));
-		ts.setTraining_end_date(result.getDate(10));
+		ts.setTraining_start_date(result.getTimestamp(9));
+		ts.setTraining_end_date(result.getTimestamp(10));
 		ts.setTraining_break_down(result.getString(11));
 		ts.setTraining_url(result.getURL(12));
 		ts.setTraining_phone(result.getString(13));
