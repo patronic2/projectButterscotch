@@ -1,7 +1,7 @@
 package DDTProject;
 
 import java.net.URL;
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class TrainingSchedule {
 	private int training_schedule_id;
@@ -12,8 +12,8 @@ public class TrainingSchedule {
 	private String training_time_zone;
 	private String training_location;
 	private String training_room_number;
-	private Date training_start_date;
-	private Date training_end_date;
+	private Timestamp training_start_date;
+	private Timestamp training_end_date;
 	private String training_break_down;
 	private URL training_url;
 	private String training_phone;
@@ -66,16 +66,16 @@ public class TrainingSchedule {
 	public void setTraining_room_number(String training_room_number) {
 		this.training_room_number = training_room_number;
 	}
-	public Date getTraining_start_date() {
+	public Timestamp getTraining_start_date() {
 		return training_start_date;
 	}
-	public void setTraining_start_date(Date training_start_date) {
+	public void setTraining_start_date(Timestamp training_start_date) {
 		this.training_start_date = training_start_date;
 	}
-	public Date getTraining_end_date() {
+	public Timestamp getTraining_end_date() {
 		return training_end_date;
 	}
-	public void setTraining_end_date(Date training_end_date) {
+	public void setTraining_end_date(Timestamp training_end_date) {
 		this.training_end_date = training_end_date;
 	}
 	public String getTraining_break_down() {

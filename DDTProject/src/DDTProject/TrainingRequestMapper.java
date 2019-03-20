@@ -16,8 +16,8 @@ public class TrainingRequestMapper implements RowMapper<TrainingRequest>
 		  tr.setRequest_training_module(result.getString(5));
 		  tr.setRequest_training_module_scope(result.getString(6));
 		  tr.setRequest_training_mode(result.getString(7));
-		  tr.setRequest_start_date(result.getDate(8));
-		  tr.setRequest_end_date(result.getDate(9));
+		  tr.setRequest_start_date(result.getTimestamp(8));
+		  tr.setRequest_end_date(result.getTimestamp(9));
 		  tr.setRequest_location(result.getString(10));
 		  tr.setRequest_time_zone(result.getString(11));
 		  tr.setRequest_approx_participant(result.getInt(12));

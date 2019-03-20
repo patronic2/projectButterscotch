@@ -193,9 +193,11 @@ public class CallbackFunction
 			break;
 		case 203:
 			//DDT
+			//Move to in process
 			break;
 		case 204:
 			//DDT
+			//looking for trainer
 			break;
 		case 205:
 			//DDT
@@ -220,12 +222,15 @@ public class CallbackFunction
 			break;
 		case 221:
 			//DDT rejected
+			//move back to 203 or onward to 303
 			break;
 		case 222:
 			//DDT approved
+			//move to 230
 			break;
 		case 230:
 			//DDT sent to EXEC
+			//move to in training
 			break;
 		case 303:
 			//VT
@@ -265,6 +270,7 @@ public class CallbackFunction
 			break;
 		case 150:
 			//Finished
+			//move to archived
 			break;
 		default:
 			break;			
