@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.trainingRequestLog;
 
 import java.sql.Timestamp;
 

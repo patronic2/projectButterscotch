@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.trainingManagementStatus;
 
 public class ManagmentStatus {
 	private int training_management_status_id;

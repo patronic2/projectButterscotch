@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.employee;
 
 public class Employee {
 	 private int employee_id;

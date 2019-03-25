@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.trainingManagementStatus;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,10 +9,12 @@ public class ManagmentStatusMapper implements RowMapper<ManagmentStatus>
 {
 
 	public ManagmentStatus mapRow(ResultSet result, int arg1) throws SQLException {
+		
+		
 		ManagmentStatus ms = new ManagmentStatus();
-		ms.setTraining_management_status_id(result.getInt(1));
-		ms.setTraining_request_id(result.getInt(2));
-		ms.setStatus(result.getString(3));
+		ms.setTraining_management_status_id(result.getInt("training_management_status_id"));
+		ms.setTraining_request_id(result.getInt("training_request_id"));
+		ms.setStatus(result.getString("status"));
 		return ms;
 	}
 

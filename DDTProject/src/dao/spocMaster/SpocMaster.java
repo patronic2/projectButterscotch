@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.spocMaster;
 
 public class SpocMaster 
 {

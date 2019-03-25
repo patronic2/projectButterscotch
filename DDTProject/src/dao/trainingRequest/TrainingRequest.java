@@ -1,8 +1,6 @@
-package DDTProject;
+package dao.trainingRequest;
 
 import java.sql.Timestamp;
-
-
 
 public class TrainingRequest {
 	private int training_request_id;
