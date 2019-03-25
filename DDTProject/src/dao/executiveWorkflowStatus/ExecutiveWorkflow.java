@@ -1,4 +1,5 @@
-package DDTProject;
+package dao.executiveWorkflowStatus;
+
 
 public class ExecutiveWorkflow {
 	private int executive_workflow_status_id;
@@ -10,6 +11,13 @@ public class ExecutiveWorkflow {
 	private int vendor_training_clearance;
 	private int completed_feedback;
 	private int training_completed;
+	
+	public boolean getTF(int a)
+	{
+		if(a==1)
+			{ return true; }
+		return false;
+	}
 	
 	public int getExecutive_workflow_status_id() {
 		return executive_workflow_status_id;

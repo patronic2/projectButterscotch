@@ -1,8 +1,8 @@
-package DDTProject;
+package dao.dtt.developTeamTrainerRequest;
 
 import java.sql.Timestamp;
 
-public class DDTrainer {
+public class DDTTrainer {
 	private int dtt_trainer_request_id;
 	private Timestamp request_sent_date;
 	private int trainer_id;

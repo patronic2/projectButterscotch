@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.trainingParticipants;
 
 public class Participants {
 	private int training_participant_id;

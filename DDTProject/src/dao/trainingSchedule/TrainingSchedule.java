@@ -1,4 +1,4 @@
-package DDTProject;
+package dao.trainingSchedule;
 
 import java.net.URL;
 import java.sql.Timestamp;

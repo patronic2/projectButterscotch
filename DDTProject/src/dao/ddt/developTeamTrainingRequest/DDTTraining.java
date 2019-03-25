@@ -1,6 +1,6 @@
-package DDTProject;
+package dao.ddt.developTeamTrainingRequest;
 
-public class DDTraining {
+public class DDTTraining {
 	private int Dtt_training_id;
 	private int training_request_id;
 	private int trainer_request_id;
