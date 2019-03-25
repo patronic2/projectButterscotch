@@ -97,6 +97,21 @@ $(function () {
     });
 })
 
+//the function for the filter
+
+$(document).ready(function() {
+    $(".tst").keyup(function(){
+      $(".proc-card").show();
+      var input=$(".tst").val();
+      var type=$("#filterList").val();
+      $(".proc-card").each(function(){
+        if(!$(this).find(type).text().includes(input) && input!="") {
+          $(this).hide();
+        }
+    })
+    })});    
+
+
 
 // $(document).ready(function(){
 //     $('.danger').popover({ 
@@ -106,3 +121,4 @@ $(function () {
 //       }
 //     });
 //   });
+

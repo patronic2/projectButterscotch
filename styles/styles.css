@@ -42,6 +42,12 @@ footer {
   border-width: 3px;
 }
 
+.proc-card-a {
+  width: 250px;
+  height: 250px;
+  margin: 25px;
+}
+
 .proc-card-body {
   padding: 1rem;
 }
