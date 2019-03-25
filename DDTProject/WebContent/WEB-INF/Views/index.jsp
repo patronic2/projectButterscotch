@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
 <head>
   <title>DTT Page</title>
@@ -7,31 +11,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS dependencies -->
-  <link rel="stylesheet" href="./styles/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./styles/fontawesome-free-5.7.2-web/fontawesome-free-5.7.2-web/css/all.css">
+  <link rel="stylesheet" href="./resources/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./resources/fontawesome-free-5.7.2-web/fontawesome-free-5.7.2-web/css/all.css">
 
   <!-- JS dependencies -->
-  <script src="./styles/js/jquery-3.3.1.min.js"></script>
+  <script src="./resources/js/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="./styles/js/popper.min.js"></script>
-  <script src="./styles/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="./resources/js/popper.min.js"></script>
+  <script src="./resources/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="stylesheet" href="./styles/accordion.css">
+  <link rel="stylesheet" href="./resources/css/styles.css">
+  <link rel="stylesheet" href="./resources/css/accordion.css">
 
   <!-- Custom JS -->
-  <script src="./styles/js/main.js"></script>
+  <script src="./resources/js/main.js"></script>
 
 </head>
 
 <body>
 
+  
   <header class="phead">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xl-4">
-          <img id="ashlogo" src="./imgs/ToolBar logo.png" alt="">
+          <img id="ashlogo" src="./resources/imgs/ToolBar logo.png" alt="">
         </div>
 
         <div class="col-xl-6" align="right">
@@ -496,19 +501,17 @@
   </div> -->
 
   <nav class="navbar navbar-expand-sm navbar-dark nvbr ">
-    <form class="form-inline" action="/action_page.php">
-      <select name="Filters" id="filterList" class="form-control">
-        <option value="trainerName">Trainer Name</option>
-        <option value="location">Location</option>
-        <option value="trainingType">Training Type</option>
-        <option value="startDate">Start Date</option>
-        <option value="endDate">End Date</option>
+    <form class="form-inline">
+      <select name="Filters" style="border-radius: 0%" id="filterList" class="form-control">
+        <option value=".pmname">Trainer Name</option>
+        <option value=".location">Location</option>
+        <option value=".trainingType">Training Type</option>
+        <option value=".startDate">Start Date</option>
+        <option value=".groupSize">groupSize</option>
       </select>
 
-      <input class="form-control" type="text" placeholder="Search">
-      <div class="input-group-append">
-        <button class="btn btn-light" type="submit">Filter</button>
-      </div>
+      <input class="form-control tst" style="border-radius: 0%;" type="text" placeholder="Search">
+
     </form>
     <div class="Collapse navbar-collapse justify-content-end">
       <button class="openbtn" onclick="openNav()" title="Executive View"> ☰ </button>
@@ -539,9 +542,9 @@
               <td style="border: 0;" align="center">Training: JavaFullstack</td>
             </tr>
             <tr>
-              <td style="border: 0" height="30px"><img width='20px' height='20px' src='Images\PM2.jpg'>: Frank <button
+              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: Frank <button
                   style="background-color:white; border:0px; float: right;" id="newTrainBut"><img width='20px' height='20px'
-                    src='Images\rightTriangle.png'></button></td>
+                    src='./resources/images/rightTriangle.png'></button></td>
             </tr>
           </table>
           <br>
@@ -550,9 +553,9 @@
               <td style="border: 0;" align="center">Training: Agile</td>
             </tr>
             <tr>
-              <td style="border: 0;" height="30px"><img width='20px' height='20px' src='Images\PM2.jpg'>: Dave
+              <td style="border: 0;" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: Dave
                 <button id="newTrainBut2" style="background-color:white; border:0px; float: right;"><img width='20px'
-                    height='20px' src='Images\rightTriangle.png'></button></td>
+                    height='20px' src='./resources/images/rightTriangle.png'></button></td>
             </tr>
           </table>
           <br>
@@ -561,9 +564,9 @@
               <td style="border: 0;" align="center">Training: JDBC</td>
             </tr>
             <tr>
-              <td style="border: 0;" height="30px"><img width='20px' height='20px' src='Images\PM2.jpg'>: Bill
+              <td style="border: 0;" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: Bill
                 <button id="newTrainBut3" style="background-color:white; border:0px; float: right;"><img width='20px'
-                    height='20px' src='Images\rightTriangle.png'></button></td>
+                    height='20px' src='./resources/images/rightTriangle.png'></button></td>
             </tr>
           </table>
         </div>
@@ -571,117 +574,285 @@
 
 
       <!-------------------------- TRAINING REQUESTS BEING PROCESSED ---------------------------------->
-      <div class="col-sm-3"  id="col-sm-1">
-        <div class="card proc-card">
+      <div class="col-sm-10 form-inline"  id="col-sm-1">
+        <div class="card proc-card proc-card-a">
           <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
-              data-toggle="popover" data-trigger="hover focus" title="Summary">....</button></div>
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
             <table width="100%">
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
-                <td>Mahesh</td>
+                <td class="pmname">Mahesh</td>
                 <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
                     data-target="#edit_steps">Edit</button></td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
-                <td>Java</td>
+                <td class="trainingType">Java</td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
-                <td>02/13/2019</td>
+                <td class="startDate">02/13/2019</td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
-                <td>26</td>
+                <td class="groupSize">26</td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
-                <td>Phoenix</td>
+                <td class="location">Phoenix</td>
               </tr>
             </table>
           </div>
         </div>
 
-        <div class="card proc-card">
-          <div class="card-header">10002 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Mahesh</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">26</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <div class="card proc-card">
-          <div class="card-header">10003 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Mahesh</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">26</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card proc-card">
-          <div class="card-header">10001 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+      
+      
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Mahesh</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">26</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <div class="card proc-card">
-          <div class="card-header">10002 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Mahesh</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">26</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <div class="card proc-card">
-          <div class="card-header">10003 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Mahesh</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">13</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card proc-card">
-          <div class="card-header">10001 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+      
+      
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Pat</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">C#</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">26</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <div class="card proc-card">
-          <div class="card-header">10002 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Mahesh</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">02/26/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">26</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Memphis</td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <div class="card proc-card">
-          <div class="card-header">10003 <button class="summary-btn" title="Summary" data-toggle="modal" data-target="#summary_steps_processed">...</button></div>
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
-            Type of Training<br>
-            Project Manager<br>
-            Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-            <button type="button" class="btn btn-primary proc-btn" data-toggle="modal" data-target="#edit_steps">Edit</button>
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">Jason</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">Java</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">12/13/2019</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">12</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">Phoenix</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -848,6 +1019,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
