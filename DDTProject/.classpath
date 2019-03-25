@@ -43,5 +43,9 @@
 	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/SprintJars/spring-web-3.2.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/SprintJars/spring-webmvc-3.2.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/SprintJars/spring-webmvc-portlet-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Training/driver/jstl/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Training/driver/jstl/jstl-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Training/driver/jstl/jstl-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/Training/driver/jstl/jstl-impl.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
