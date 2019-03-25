@@ -1,2 +1,0 @@
-# projectButterscotch
-Project for training
