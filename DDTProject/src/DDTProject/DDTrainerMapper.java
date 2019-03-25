@@ -19,5 +19,4 @@ public class DDTrainerMapper implements RowMapper<DDTrainer>
 		ddtrnr.setActive_status(result.getInt(8));
 		return ddtrnr;
 	}
-
 }
