@@ -1,6 +1,8 @@
-package DDTProject;
+package ddtProjectQueries;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CallbackFunction 
@@ -16,10 +18,16 @@ public class CallbackFunction
 		return false;		
 	}
 	
-	public Timestamp timestampToDate(Date date)
+	public static Timestamp dateToTimestamp(Date date)
 	{
 		Timestamp ts = (Timestamp)date;
 		return ts;
+	}
+	
+	public static Date timestampToDate(Timestamp ts)
+	{
+		Date date = (Date)ts;
+		return date;
 	}
 	
 	public void statusChange(int status)
