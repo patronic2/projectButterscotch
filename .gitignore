@@ -1,9 +1,3 @@
 db
-*.xmi
-*.log
-*.index
-*.snap
-*.index
-*.version
-*.markers
-*.metadata
+metadata/
+
