@@ -6,12 +6,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import dao.dtt.developTeamTrainerRequest.DDTTrainer;
-import dao.dtt.developTeamTrainerRequest.DDTTrainerMapper;
-import dao.dtt.inTrainingCard.InTrainingCard;
-import dao.dtt.inTrainingCard.InTrainingCardDAO;
-import dao.dtt.inTrainingCard.InTrainingCardMapper;
-
 public class InProcessCardDAO 
 {
 	ApplicationContext context;

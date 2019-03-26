@@ -1,8 +1,6 @@
 package ddtProjectQueries;
 
 import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CallbackFunction 
@@ -20,13 +18,13 @@ public class CallbackFunction
 	
 	public static Timestamp dateToTimestamp(Date date)
 	{
-		Timestamp ts = (Timestamp)date;
+		Timestamp ts = new Timestamp(date.getTime());
 		return ts;
 	}
 	
 	public static Date timestampToDate(Timestamp ts)
 	{
-		Date date = (Date)ts;
+		Date date = new Date(ts.getTime());
 		return date;
 	}
 	
@@ -72,37 +70,37 @@ public class CallbackFunction
 			//IT sent to EXEC
 			break;
 		case 203:
-			//DDT
+			//DDT move to middle of screen
 			break;
 		case 204:
-			//DDT
+			//DDT first edit to trainer
 			break;
 		case 205:
-			//DDT
+			//DDT communicating with trainer
 			break;
 		case 206:
-			//DDT
+			//DDT trainer confirmed
 			break;
-		case 207:
-			//DDT
+		case 207: 
+			//DDT first edit to location
 			break;
-		case 208:
-			//DDT
+		case 208: 
+			//DDT 
 			break;
-		case 209:
+		case 209: 
 			//DDT
 			break;
 		case 210:
-			//DDT sent to PM
+			//DDT awaiting PM approval
 			break;
 		case 220:
 			//DDT response from PM
 			break;
 		case 221:
-			//DDT rejected
+			//DDT PM rejected
 			break;
 		case 222:
-			//DDT approved
+			//DDT PM approved
 			break;
 		case 230:
 			//DDT sent to EXEC
@@ -144,7 +142,7 @@ public class CallbackFunction
 			//VT sent to EXEC
 			break;
 		case 150:
-			//Finished
+			//Training Completed
 			break;
 		default:
 			break;
@@ -224,9 +222,6 @@ public class CallbackFunction
 			break;
 		case 210:
 			//DDT sent to PM
-			break;
-		case 220:
-			//DDT response from PM
 			break;
 		case 221:
 			//DDT rejected
