@@ -1,1 +1,8 @@
 /build
+/target/
+
+.project
+.settings
+pom.xml
+.classpath
+../.project
