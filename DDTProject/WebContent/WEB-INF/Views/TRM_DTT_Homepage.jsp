@@ -7,7 +7,7 @@
 
 <head>
   <title>DTT Page</title>
-  <meta charset="utf-8">
+  <!-- <meta charset="utf-8"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS dependencies -->
@@ -163,8 +163,7 @@
   </div>
 
  -->
-
- <div id="popover_content_wrapper" style="display: none;">
+<div id="popover_content_wrapper" style="display: none;">
   <div class="card proc-card">
     <div class="card-header">10001 </div>
     <div class="card-body proc-card-body">
@@ -184,6 +183,7 @@
     </div>
   </div>
 </div>
+ 
   
     <nav class="navbar navbar-expand-sm navbar-dark nvbr ">
     <form class="form-inline">
@@ -220,14 +220,15 @@
     <div class="row">
       <div class="col-sm-2">
         <!--------------------------------- NEW REQUESTS ----------------------------------->
+        <c:forEach var="newReqs" items="${TRM_DTT_Homepage1}">
         <div>
           <table class="newTrainTable1" border="4px" width='180px' style="border-radius: 9px; border-color:royalblue; box-shadow: -5px 5px grey">
 
             <tr>
-              <td style="border: 0;" align="center">Training: JavaFullstack</td>
+              <td style="border: 0;" align="center">Training: ${newReqs.trainingModule}</td>
             </tr>
             <tr>
-              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: Frank <button
+              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} <button
                   style="background-color:white; border:0px; float: right;" id="newTrainBut"><img width='20px' height='20px'
                     src='./resources/images/rightTriangle.png'></button></td>
             </tr>
@@ -235,71 +236,53 @@
           <br>
           
         </div>
+        </c:forEach>
       </div>
 
 
       <!-------------------------- TRAINING REQUESTS BEING PROCESSED ---------------------------------->
       <div class="col-sm-10 form-inline" id="col-sm-1">
       
-	<c:forEach var="name" items="${TRM_DTT_Homepage}">
+	<c:forEach var="requests" items="${TRM_DTT_Homepage}">
         <div class="card proc-card proc-card-a">
-          <div class="card-header">10001 <button type="button" class="summary-btn danger" href='#' id="popover"
+          <div class="card-header">${requests.requestId} <button type="button" class="summary-btn danger" href='#' id="popover"
               data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
           <div class="card-body proc-card-body">
             <table width="100%">
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
-                <td class="pmname">${name}</td>
+                <td class="pmname">${requests.firstName} ${requests.lastName}</td>
                 <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
-                    data-target="#edit_steps${name}">Edit</button></td>
+                    data-target="#edit_steps${requests.requestId}">Edit</button></td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
-                <td class="trainingType">Java</td>
+                <td class="trainingType">${requests.trainingType}: ${requests.trainingModule} (${requests.trainingModuleScope})</td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
-                <td class="startDate">02/13/2019</td>
+                <td class="startDate">${requests.startDate}</td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
-                <td class="groupSize">26</td>
+                <td class="groupSize">${requests.approxParticipants}</td>
               </tr>
               <tr>
                 <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
-                <td class="location">Phoenix</td>
+                <td class="location">${requests.location}</td>
               </tr>
             </table>
             
-            <div id="popover_content_wrapper" style="display: none;">
-  <div class="card proc-card">
-    <div class="card-header">10001 </div>
-    <div class="card-body proc-card-body">
-      <i class="fas fa-chalkboard-teacher" title="Training"></i> <span id="summary-training">Java</span><br>
-      <i class="fas fa-user" title="Project Manager"></i> <span id="summary-pm">${name}</span><br>
-      <i class="fas fa-calendar-alt" title="Start Date"></i> <span id="summary-start-date">02/13/2019 - 04/05/2019</span><br>
-      <i class="fas fa-map-marker-alt" title="Location"></i> <span id="summary-location">2532 W Peoria Ave<br>  Phoenix, AZ 85029</span><br>
-      <i class="fas fa-globe" title="Country"></i> <span id="summary-country">USA</span><br>
-      <hr>
-      <i class="fas fa-building" title="Room Number"></i> <span id="summary-room-no">Plaza Ballroom I</span>
-      <br> or <br>
-      <i class="fas fa-link" title="Class URL"></i> <span id="summary-url"><a href="https://www.atos-syntel.net/" title="Syntel University">https://www.atos-syntel.net/</a></span><br>
-      <i class="fas fa-scroll" title="Training Summary"></i> <span id="summary-sum">Additional training summary or details go here.</span><br>
-      <hr>
-      <p id="status">Status:</p>
-
-    </div>
-  </div>
-</div>
+            
 
 
-<div class="modal" id="edit_steps${name}">
+<div class="modal" id="edit_steps${requests.requestId}">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
 
         <div class="modal-header">
           <h4 class="modal-title">Update Training Request</h4>
-          <button type="button" class="close" data-dismiss="modal">×</button>
+          <button type="button" class="close" data-dismiss="modal">x</button>
         </div>
 
         <!-- Modal body -->
@@ -442,23 +425,21 @@
                 </li>
               </ul>
             </div>
-            <div class="col-sm-6">Summary of steps completed goes here.
+            <div class="col-sm-6">
               <div class="card proc-card">
-                <div class="card-header">10002 </div>
+                <div class="card-header">${requests.requestId} </div>
                 <div class="card-body proc-card-body">
-                  Type of Training<br>
-                  Project Manager: ${name}<br>
-                  Dates: xx/xx/xxxx - xx/xx/xxxx<br>
-                  Location: <br>
-                  City: <br>
-                  State: <br>
-                  Country: <br>
-                  Zip: <br>
+                  <i class="fas fa-chalkboard-teacher" title="Training"></i> ${requests.trainingType}: ${requests.trainingModule} (${requests.trainingModuleScope})<br>
+                  <i class="fas fa-user" title="Project Manager"></i> ${requests.firstName} ${requests.lastName}<br>
+                  <i class="fas fa-calendar-alt" title="Dates"></i> ${requests.startDate} - ${requests.endDate}<br>
+                  <i class="fas fa-map-marker-alt" title="Location"></i> <span style="font-style: italic">(Address)</span><br>
+                  <i class="fas fa-globe" title="Country"></i> ${requests.location}<br>
+                  
                   <hr>
-                  Room Number: <br>
+                  <i class="fas fa-building" title="Room Number"></i> <span style="font-style: italic">(Room)</span><br>
                   or <br>
-                  Class URL: <br>
-                  Training Summary <br>
+                  <i class="fas fa-link" title="Class URL"></i> <a href="https://www.atos-syntel.net/" title="Syntel University">https://www.atos-syntel.net/</a><br>
+                  <i class="fas fa-scroll" title="Training Summary"></i> <span style="font-style: italic">Additional training summary or details go here.</span><br>
                   <hr>
                   <p id="status">Status:</p>
                 </div>
