@@ -82,7 +82,7 @@
         <div class="modal-body">
           <h3>Users Information</h3>
           <br>
-          <p>Name: Mahesh</p>
+          <p>Name: Mahesh1</p>
           <p>Email: mahesh@syntelinc.net</p>
 
 
@@ -163,26 +163,7 @@
   </div>
 
  -->
-<div id="popover_content_wrapper" style="display: none;">
-  <div class="card proc-card">
-    <div class="card-header">10001 </div>
-    <div class="card-body proc-card-body">
-      <i class="fas fa-chalkboard-teacher" title="Training"></i> <span id="summary-training">Java</span><br>
-      <i class="fas fa-user" title="Project Manager"></i> <span id="summary-pm">Mahesh</span><br>
-      <i class="fas fa-calendar-alt" title="Start Date"></i> <span id="summary-start-date">02/13/2019 - 04/05/2019</span><br>
-      <i class="fas fa-map-marker-alt" title="Location"></i> <span id="summary-location">2532 W Peoria Ave<br>  Phoenix, AZ 85029</span><br>
-      <i class="fas fa-globe" title="Country"></i> <span id="summary-country">USA</span><br>
-      <hr>
-      <i class="fas fa-building" title="Room Number"></i> <span id="summary-room-no">Plaza Ballroom I</span>
-      <br> or <br>
-      <i class="fas fa-link" title="Class URL"></i> <span id="summary-url"><a href="https://www.atos-syntel.net/" title="Syntel University">https://www.atos-syntel.net/</a></span><br>
-      <i class="fas fa-scroll" title="Training Summary"></i> <span id="summary-sum">Additional training summary or details go here.</span><br>
-      <hr>
-      <p id="status">Status:</p>
 
-    </div>
-  </div>
-</div>
  
   
     <nav class="navbar navbar-expand-sm navbar-dark nvbr ">
@@ -274,7 +255,26 @@
             </table>
             
             
+<div id="popover_content_wrapper" style="display: none;">
+  <div class="card proc-card">
+    <div class="card-header">10001 </div>
+    <div class="card-body proc-card-body">
+      <i class="fas fa-chalkboard-teacher" title="Training"></i> <span id="summary-training">Java</span><br>
+      <i class="fas fa-user" title="Project Manager"></i> <span id="summary-pm">${requests.firstName}</span><br>
+      <i class="fas fa-calendar-alt" title="Start Date"></i> <span id="summary-start-date">02/13/2019 - 04/05/2019</span><br>
+      <i class="fas fa-map-marker-alt" title="Location"></i> <span id="summary-location">2532 W Peoria Ave<br>  Phoenix, AZ 85029</span><br>
+      <i class="fas fa-globe" title="Country"></i> <span id="summary-country">USA</span><br>
+      <hr>
+      <i class="fas fa-building" title="Room Number"></i> <span id="summary-room-no">Plaza Ballroom I</span>
+      <br> or <br>
+      <i class="fas fa-link" title="Class URL"></i> <span id="summary-url"><a href="https://www.atos-syntel.net/" title="Syntel University">https://www.atos-syntel.net/</a></span><br>
+      <i class="fas fa-scroll" title="Training Summary"></i> <span id="summary-sum">Additional training summary or details go here.</span><br>
+      <hr>
+      <p id="status">Status:</p>
 
+    </div>
+  </div>
+</div>
 
 <div class="modal" id="edit_steps${requests.requestId}">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -459,6 +459,22 @@
 
           </div>
         </div>   
+    <script>
+        $(function () {
+    	$('[data-toggle=popover]').popover({
+        html: true,
+        content: function () {
+   
+        	var name='#popover_content_wrapper'+${requests.requestId}
+            return $('#popover_content_wrapper').html();
+        }
+    	}).click(function () {
+        $(this).popover('show');
+        $("#popover").popover({
+            trigger: "hover"
+        });
+    	});
+    </script>
         </c:forEach>     
       </div>
     </div>
