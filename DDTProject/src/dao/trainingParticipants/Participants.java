@@ -1,9 +1,19 @@
 package dao.trainingParticipants;
 
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
+
 public class Participants {
 	private int training_participant_id;
 	private int participant_employee_id;
 	private int training_session_attended;
+	
+	public Employee getEmployeeDetails(int employee_id)
+	{
+		EmployeeDAO ed = new EmployeeDAO();
+		Employee e = ed.getEmployee(employee_id);
+		return e;	
+	}
 	
 	public int getTraining_participant_id() {
 		return training_participant_id;

@@ -1,4 +1,13 @@
-package dao.ddt.developTeamTrainingRequest;
+package dao.dtt.developTeamTrainingRequest;
+
+import dao.dtt.developTeamTrainerRequest.DDTTrainer;
+import dao.dtt.developTeamTrainerRequest.DDTTrainerDOA;
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
+import dao.trainingRequest.TrainingRequest;
+import dao.trainingRequest.TrainingRequestDAO;
+import dao.trainingSchedule.TrainingSchedule;
+import dao.trainingSchedule.TrainingScheduleDAO;
 
 public class DDTTraining {
 	private int Dtt_training_id;
@@ -9,6 +18,34 @@ public class DDTTraining {
 	private String trainer_approval_mail;
 	private String trainer_manager_approval_mail;
 	private String description_of_status;
+	
+	public Employee getEmployeeDetails(int employee_id)
+	{
+		EmployeeDAO ed = new EmployeeDAO();
+		Employee e = ed.getEmployee(employee_id);
+		return e;	
+	}
+	
+	public TrainingRequest getRequest(int training_request_id)
+	{
+		TrainingRequestDAO trd = new TrainingRequestDAO();
+		TrainingRequest tr = trd.getTrainingRequest(training_request_id);
+		return tr;		
+	}
+	
+	public TrainingSchedule getSchedule(int schedule_id)
+	{
+		TrainingScheduleDAO tsd = new TrainingScheduleDAO();
+		TrainingSchedule ts = tsd.getTrainingSchedule(schedule_id);
+		return ts;
+	}
+	
+	public DDTTrainer getTrainer(int trainer_request_id)
+	{
+		DDTTrainerDOA trnd = new DDTTrainerDOA();
+		DDTTrainer trn = trnd.getDDTTrainer(trainer_request_id);
+		return trn;
+	}
 	
 	public int getDtt_training_id() {
 		return Dtt_training_id;

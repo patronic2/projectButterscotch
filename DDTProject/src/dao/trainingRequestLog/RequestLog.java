@@ -2,12 +2,22 @@ package dao.trainingRequestLog;
 
 import java.sql.Timestamp;
 
+import dao.trainingRequest.TrainingRequest;
+import dao.trainingRequest.TrainingRequestDAO;
+
 public class RequestLog {
 	private int request_log_id;
 	private int training_request_id;
 	private int status_changed_to;
 	private Timestamp status_change_time;
 	private String description;
+	
+	public TrainingRequest getRequest(int training_request_id)
+	{
+		TrainingRequestDAO trd = new TrainingRequestDAO();
+		TrainingRequest tr = trd.getTrainingRequest(training_request_id);
+		return tr;		
+	}
 	
 	public int getRequest_log_id() {
 		return request_log_id;
