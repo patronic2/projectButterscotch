@@ -1,16 +1,16 @@
 //poppers errwhere
-$(function () {
-    $('[data-toggle=popover]').popover({
-        html: true,
-        content: function () {
-            return $('#popover_content_wrapper').html();
-        }
-    }).click(function () {
-        $(this).popover('show');
-        $("#popover").popover({
-            trigger: "hover"
-        });
-    });
+//$(function () {
+//    $('[data-toggle=popover]').popover({
+//        html: true,
+//        content: function () {
+//            return $('#popover_content_wrapper').html();
+//        }
+//    }).click(function () {
+//        $(this).popover('show');
+//        $("#popover").popover({
+//            trigger: "hover"
+//        });
+//    });
 
     function openNav() {
         document.getElementById("mySidebar").style.width = "350px";
@@ -51,7 +51,7 @@ $(function () {
         };
     }
 
-    var accordion = new Accordion($('#accordion'), false);
+    var accordion = new Accordion($('.accordion'), false);
 
     $(".datepicker").datepicker();
 
@@ -95,7 +95,6 @@ $(function () {
         $(".newTrainTable1").remove();
         $("#col-sm-1").prepend('<div class="card proc-card"><div class="card-header"> ' + idNum + '<button type="button" class="summary-btn danger" href="#" id="popover"data-toggle="popover" data-trigger="hover" title="Summary">....</button></div><div class="card-body proc-card-body"><table width="100%"><tr><td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td><td>'+ person + '</td><td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"data-target="#edit_steps">Edit</button></td></tr><tr><td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td><td> '+ trainingType + '</td></tr><tr><td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td><td>'+ date + '</td></tr><tr><td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td><td>'+ numPersons + '</td></tr><tr><td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td><td>'+ location + '</td></tr></table></div></div>' );
     });
-})
 
 
 $(document).ready(function() {
