@@ -29,8 +29,8 @@ public class InProcessCardMapper implements RowMapper<InProcessCard>
 		ipc.setRequest(tr);
 		
 		TrainingSchedule ts = new TrainingSchedule();
-		ts.setTraining_start_date(result.getTimestamp("training_start_date"));
-		ts.setTraining_end_date(result.getTimestamp("training_end_date"));
+		ts.setTraining_start_date(result.getString("training_start_date"));
+		ts.setTraining_end_date(result.getString("training_end_date"));
 		ipc.setSchedule(ts);
 
 		ManagmentStatus s  = new ManagmentStatus();
