@@ -28,6 +28,8 @@
 
 <!-- Custom JS -->
 <script src="./resources/js/main.js"></script>
+<script src="./resources/css/main.js"></script>
+
 
 </head>
 
@@ -214,7 +216,7 @@
 			<!-------------------------- TRAINING REQUESTS BEING PROCESSED ---------------------------------->
 			<div class="col-sm-10 form-inline" id="col-sm-1">
 
-				<c:forEach var="requests" items="${TRM_DTT_Homepage}">
+				<c:forEach var="requests" items="${TRM_DTT_Homepage}" varStatus="index">
 					<div class="card proc-card proc-card-a">
 						<div class="card-header">${requests.requestId}
 							<button type="button" class="summary-btn danger" href='#'
@@ -245,7 +247,7 @@
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-user"
 										title="Project Manager"></i></td>
-									<td class="pmname">${requests.firstName}
+									<td class="pmname"><p>hello</p> 
 										${requests.lastName}</td>
 									<td rowspan="5" class="align-bottom"><button type="button"
 											class="btn btn-primary proc-btn" data-toggle="modal"
@@ -322,134 +324,161 @@
 
 
 													<ul id="accordion" class="accordion">
-														<li>
-															<div class="link">
-																<i class="fa fa-database"></i>S.D.T.T.<i
-																	class="fa fa-chevron-down"></i>
-															</div>
-															<ul class="submenu">
-																<!--   Trainer Confirmation -->
-																<li>
-																	<table>
-																		<tr>
-																			<div class="stupidLeft">
-																				<i class="hfas fas fa-user-tie"><label>Trainer</label></i>
-																			</div>
+                <li>
+                  <div class="link"><i class="fa fa-database"></i>S.D.T.T.<i class="fa fa-chevron-down"></i></div>
+                  <ul class="submenu">
+                    <!--   Trainer Confirmation -->
+                    <li>
+                      <table>
+                        <tr>
+                         <div class= "stupidLeft">
+                            <i class="hfas fas fa-user-tie"><label>Trainer</label></i>
+                         </div> 
+						    <div class = "stupidRight" style="padding-left:10px">
+                            <datalist id="trainerdatalist">
+                              <option value="Mahesh Rajput"></option>
+                              <option value="Some Guy"></option>
+                              <option value="Copyrighted Character"></option>
+                            </datalist>
+                            <input class = "trainerList" type="text" name="trainer" list="trainerdatalist" />
+                          </div>
+						  </tr>
+                        <tr>
+                          <td>
+                            <i class="hfas fas fa-check"><label>Trainer Acceptance</label></i>
+                          </td>
+                          <td>
+                            <input type="checkbox" />
+                          </td>
+                        </tr>
 
+                      </table>
+                    </li>
+                    <!--   Schedule Confirmation  -->
+																
+						<li>
+                      <table>
+					                              <tr>	
+												  
+							<div class = "justwork">
+					<label>Start</label>		</div>
+							<div class = "justworkdate">
+                            <input type="text" class="datepicker">
+							
+							</div>
+							</tr>
+                            <tr>					
+							<div class = "justwork">
+					<label>End</label>		</div>
+							<div class = "justworkdate">
+                            <input type="text" class="datepicker">
 
-																			<div class="stupidRight">
-																				<datalist id="trainerdatalist">
-																				<option value="Mahesh Rajput"></option>
-																				<option value="Some Guy"></option>
-																				<option value="Copyrighted Character"></option>
-																				</datalist>
-																				<input class="trainerList" type="text"
-																					name="trainer" list="trainerdatalist" />
-																			</div>
-																		</tr>
-																		<tr>
-																			<td><i class="hfas fas fa-check"><label>Trainer
-																						Acceptance</label></i></td>
-																			<td><input type="checkbox" /></td>
-																		</tr>
+							</div>
+							</tr>
+						<tr><td style="width:100%">
+						  <div class="checkboxes">
+                          <label><input type="checkbox" name="Classroom" value="classroom"> Classroom</label>
+                          <label><input type="checkbox" name="Online" value="online"> Online</label>
+                          <label><input type="checkbox" name="Virtual" value="classroom"> Virtual</label>
+						  </div></td></tr>
+                      </table>
+                    </li>
+                  </ul>
+                </li>
+				
+                <li>
+				
+                  <div class="link approval" data-dec="approved"><i class="fa fa-code"></i>P.M. Approved</div>
 
-																	</table>
-																</li>
-																<!--   Schedule Confirmation  -->
-																<li>
-																	<table>
-																		<tr>
-																			<td><label>Start</label> <input type="text"
-																				class="datepicker"> <br></td>
-																			<td><label>End</label> <input type="text"
-																				class="datepicker"></td>
-																		</tr>
-																		<tr>
+                </li>
+				
+                <li>
+                  <div class="link"><i class="fas fa-cloud"></i>Logistics<i class="fa fa-chevron-down"></i></div>
+                  <ul class = "submenu">
+                    <form>
+					<div class = "container">
+                      <table>
+                        <tr>
+                            <i class="hfas fas fa-map-marker" title="Location">Enter Location</i>
+                        </tr>
+                        <tr>
+                          <td align = "right">
+                            <label class="location">City: </label>
+							</td>
+							<td>
+						
+							</td>
+							<td align = "left"><input type="text"  value="" /></td>
+						</tr>
+                            
+						<tr>
+						<td align = "right">
+							<label class="location">State: </label>
+							</td>
+							<td align = "left"><input type="text" /></td>
+                        </tr>
+							
+							<tr>
+							<td align = "right">
+                            <label class="location">Country: </label>
+							</td>
+							<td align = "left"><input type="text" /></td>
+							</tr>
+                            
+							<tr>
+							<td align = "right">
+                            <label class="location">Zip: </label></td>
+							<td align = "left"><input type="text" /></td>
+							</tr>
+                      </table>
+																	                      <br>
+                      <table>
+                        <tr>
+                          
+                            <i class="hfas fas fa-book">Enter Room Number</i>
+                          
+                        </tr>
+                        <tr>
+                          <td align = "right">
+						  <label class="location" style="padding-left:68px"></label>	</td>
+						  <td align = "left"><input type="text"/></td>
+                        </tr>
+                      </table>
+					  
+                      <br>
+                     
 
-																		</tr>
-																		<tr>
-																			<td style="width: 100%">
-																				<div class="checkboxes">
-																					<label><input type="checkbox"
-																						name="Classroom" value="classroom">
-																						Classroom</label> <label><input type="checkbox"
-																						name="Online" value="online"> Online</label> <label><input
-																						type="checkbox" name="Virtual" value="classroom">
-																						Virtual</label>
-																				</div>
-																			</td>
-																		</tr>
+                        <table>
+                          <tr>
+                            
+                              <i class="hfas fas fa-desktop" title="Online">Enter Class URL</i>
+                            
+                          </tr>
+                          <tr>
+						  <td align = "right">
+						  <label class="location" style="padding-left:68px"></label>	</td>
+                            <td align style="left">
 
-																	</table>
-																</li>
-															</ul>
-														</li>
-														<li>
-															<div class="link approval" data-dec="approved">
-																<i class="fa fa-code"></i>P.M. Approved
-															</div>
+							  <input type="text"/>
 
-														</li>
-														<li>
-															<div class="link">
-																<i class="fas fa-cloud"></i>Logistics<i
-																	class="fa fa-chevron-down"></i>
-															</div>
-															<ul class="submenu">
-																<form>
-																	<table>
-																		<tr>
-																			<td><i class="hfas fas fa-map-marker"
-																				title="Location"> Enter Location</i></td>
-																		</tr>
-																		<tr>
-																			<td><label class="location">City: </label><input
-																				type="text" id=bottomdetails; /> <br> <label
-																				class="location">State: </label><input type="text"
-																				id=bottomdetails; /> <br> <label
-																				class="location">Country: </label><input type="text"
-																				id=bottomdetails; /> <br> <label
-																				class="location">Zip: </label><input type="text"
-																				id=bottomdetails; /></td>
+                            </td>
+                          </tr>
+                        </table>
+                        <br>
+                        <table>
+                          <tr>
+                            <td>
+                              <i class="hfas fas">Training Summary: <br><br><textarea style="height: 140px"></textarea></i>
 
-																		</tr>
-																	</table>
-																	<br>
-																	<table>
-																		<tr>
-																			<td><i class="hfas fas fa-book">Enter Room
-																					Number</i></td>
-																		</tr>
-																		<tr>
-																			<td><i class="hfas fas"><input type="text" /></i></td>
-																		</tr>
-																	</table>
-																	<br> <i class="hfas fas">Or</i> <br> <br>
-																	<table>
-																		<tr>
-																			<td><i class="hfas fas fa-desktop"
-																				title="Online">Enter Class URL</i></td>
-																		</tr>
-																		<tr>
-																			<td><i class="hfas fas"><input type="text" /></i>
-
-																			</td>
-																		</tr>
-																	</table>
-																	<br>
-																	<table>
-																		<tr>
-																			<td><i class="hfas fas">Training Summary: <br>
-																				<br>
-																				</ve>
-																					<textarea style="height: 140px"></textarea></i></td>
-																		</tr>
-																	</table>
-																</form>
-															</ul>
-														</li>
-													</ul>
-												</div>
+                            </td>
+                          </tr>
+                        </table>
+                    </form>
+					</div>
+					</li>
+                  </ul>
+              </ul>
+            </div>
 												<div class="col-sm-6">
 													<div class="card proc-card">
 														<div class="card-header">${requests.requestId}</div>

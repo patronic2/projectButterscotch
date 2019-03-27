@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import DDTProject.DTTNewRequestCard;
 import DDTProject.DTTProcessingCard;
 import DDTProject.DTTdaoServices;
+import DDTProject.TrainingSchedule;
+
 import bl.SecurityCheck;
 
 @Controller
@@ -28,13 +30,17 @@ public class dttController {
 	{
 		List<DTTProcessingCard> cards;
 		List<DTTNewRequestCard> newReqCards;
+		List<TrainingSchedule> schedules;
+
 		
 		cards = new DTTdaoServices().getRequestsProcessing();
 		newReqCards = new DTTdaoServices().getNewRequests();
-		
+		schedules = new DTTdaoServices().getTrainingSchedule();
+		System.out.println(schedules);
 		map.addAttribute("TRM_DTT_Homepage", cards);
 		map.addAttribute("TRM_DTT_Homepage1", newReqCards);
-		
+		map.addAttribute("TRM_DTT_Homepage_Schedules", schedules);
+
 //		List<String> names = new ArrayList<String>();
 //		names.add("Name1");
 //		names.add("Name2");
