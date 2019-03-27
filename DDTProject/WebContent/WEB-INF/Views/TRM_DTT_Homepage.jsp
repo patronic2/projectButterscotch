@@ -211,11 +211,45 @@
             <tr>
               <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} 
               
-              <a href="toProcess/${newReqs.requestId}"><img width='20px' height='20px'
-                    src='./resources/images/rightTriangle.png'> </a></td>
-                    
-                    <!--  <button
-                  style="background-color:white; border:0px; float: right;" id="newTrainBut"></button>-->
+              <a href="#" data-toggle="modal" data-target="#Process${newReqs.requestId}"><img width='20px' height='20px' src='./resources/images/rightTriangle.png'> </a></td>
+            </tr>
+            
+            <tr>
+            <td colspan="3">
+					<div class="modal" id="Process${newReqs.requestId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabelUpdate">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+
+								<div class="modal-header">
+									<h4 class="modal-title" id="myModalLabelDelete">Choose Training Type</h4>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+								</div>
+
+								<!-- Modal body -->
+								<div class="modal-body">
+									<c:catch>
+										<form action="toProcess/${newReqs.requestId}">
+											<input type="submit" class="btn btn-primary" value="DTT" /><br>
+										</form>
+
+										<form action="#">
+											<input type="submit" class="btn btn-primary" value="ITT" /><br>
+										</form>
+										<form action="#">
+											<input type="submit" class="btn btn-primary" value="VTT" /><br>
+										</form>
+									</c:catch>
+								</div>
+
+								<!-- Modal footer -->
+								<div class="modal-footer">
+
+									<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
             </tr>
           </table>
           <br>
