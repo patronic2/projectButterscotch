@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -564,7 +566,7 @@
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
 			<br>
-			<c:forEach>
+			<c:forEach var="wf" items="${TRM_DTT_Homepage3}">
 			<div class="card exec-card">
 				<div class="card-header exec-card-header">
 
@@ -580,83 +582,91 @@
 						<tr>
 							<td align="center"><span class="fa fa-book"
 								title="Training Course"></span></td>
-							<td>Java</td>
+							<td>${wf.request.request_training_module}</td>
 						</tr>
 						<tr>
 							<td align="center"><span class="fa fa-chalkboard-teacher"
 								title="Trainer"></span></td>
-							<td>Mahesh Rajput</td>
+							<td>
+							${wf.ct.first_name} ${wf.ct.last_name}
+							</td>
 						</tr>
 						<tr>
 							<td align="center"><span class="fa fa-calendar-alt"
 								title="Start and End Dates"></span></td>
-							<td>2-13-2019 to 4-5-2019</td>
+							<td>${wf.schedule.training_start_date} - ${wf.schedule.training_end_date}</td>
 						</tr>
 					</table>
 
 				</div>
 				<div class="card-body">
 					<div id="exec-table" class="collapse">
-						<table width="100%" style="font-size: medium">
-
-							<tr>
-								<td>
-									<button class="exec-check-box">
-										<span id="exec-list-1" class="far fa-square"
-											style="color: #0066a1"></span>
-									</button>
-								</td>
-								<td>Invitations Sent</td>
-							</tr>
-
-							<tr>
-								<td>
-									<button class="exec-check-box">
-										<span id="exec-list-2" class="far fa-square"
-											style="color: #0066a1"></span>
-									</button>
-								</td>
-								<td><del>Skillport Enrollment</del></td>
-							</tr>
-
-							<tr>
-								<td>
-									<button class="exec-check-box">
-										<span class="far fa-square" style="color: #0066a1"></span>
-									</button>
-								</td>
-								<td>Assessments Recorded</td>
-							</tr>
-
-							<tr>
-								<td>
-									<button class="exec-check-box">
-										<span class="far fa-square" style="color: #0066a1"></span>
-									</button>
-								</td>
-								<td>Vendor Training Clearance</td>
-							</tr>
-
-
-							<tr>
-								<td>
-									<button class="exec-check-box">
-										<span class="far fa-square" style="color: #0066a1"></span>
-									</button>
-								</td>
-								<td>Feedback Recieved</td>
-							</tr>
-
-							<tr>
-								<td>
-									<button class="exec-check-box">
-										<span class="far fa-square" style="color: #0066a1"></span>
-									</button>
-								</td>
-								<td>Training Completed</td>
-							</tr>
-
-						</table>
+						<form action="updateWorkflowStatus/${wf.workflow.executive_workflow_status_id}">
+						<c:if test="${wf.workflow.sent_invitations == 1}">
+							<input type="checkbox" class="wfcl" name="sent_invitations" value="1" checked/> Invitations Sent<br>
+						</c:if>
+						<c:if test="${wf.workflow.sent_invitations == 0}">
+							<input type="checkbox" class="wfcl" name="sent_invitations" value="0" /> Invitations Sent<br>
+						</c:if>
+						
+						<c:if test="${wf.workflow.completed_skillport_enrollment == 1}">
+							<input type="checkbox" class="wfcl" name="completed_skillport_enrollment" value="1" checked/> Skillport Enrollment<br>
+						</c:if>
+						<c:if test="${wf.workflow.completed_skillport_enrollment == 0}">
+							<input type="checkbox" class="wfcl" name="completed_skillport_enrollment" value="0" /> Skillport Enrollment<br>
+						</c:if>
+						
+						
+						<c:if test="${wf.workflow.assessments_recorded == 1}">
+							<input type="checkbox" class="wfcl" name="assessments_recorded" value="1" checked/> Assessments Recorded<br>
+						</c:if>
+						<c:if test="${wf.workflow.assessments_recorded == 0}">
+							<input type="checkbox" class="wfcl" name="assessments_recorded" value="0" /> Assessments Recorded<br>
+						</c:if>
+						
+						
+						<c:if test="${wf.workflow.vendor_training_clearance == 1}">
+							<input type="checkbox" class="wfcl" name="vendor_training_clearance" value="1" checked/> Vendor Training Clearance<br>
+						</c:if>
+						<c:if test="${wf.workflow.vendor_training_clearance == 0}">
+							<input type="checkbox" class="wfcl" name="vendor_training_clearance" value="0" /> Vendor Training Clearance<br>
+						</c:if>
+						
+						<c:if test="${wf.workflow.completed_feedback == 1}">
+							<input type="checkbox" class="wfcl" name="completed_feedback" value="1" checked/> Feedback Received<br>
+						</c:if>
+						<c:if test="${wf.workflow.completed_feedback == 0}">
+							<input type="checkbox" class="wfcl" name="completed_feedback" value="0" /> Feedback Received<br>
+						</c:if>
+						
+						<c:if test="${wf.workflow.training_completed == 1}">
+							<input type="checkbox" class="wfcl" name="training_completed" value="1" checked/> Training Completed<br>
+						</c:if>
+						<c:if test="${wf.workflow.training_completed == 0}">
+							<input type="checkbox" class="wfcl" name="training_completed" value="0" /> Training Completed<br>
+						</c:if>
+						
+							<input type="submit" label="Save" />
+						</form>
+					<script>
+					$(document).ready(function() {
+						$(".wfcl").click(function() {
+							if($(this).is(":checked")){
+								$(this).val(1);
+							}
+							else {
+								$(this).val(0);
+							}
+							
+							
+						});
+						
+						
+					});
+					
+					
+					</script>
+					
 					</div>
 				</div>
 			</div>

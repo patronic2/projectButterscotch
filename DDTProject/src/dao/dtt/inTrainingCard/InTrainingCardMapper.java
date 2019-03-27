@@ -44,8 +44,10 @@ public class InTrainingCardMapper implements RowMapper<InTrainingCard>
 		itc.setPm(pm);
 		
 		Employee ct = new Employee();
-		ct.setFirst_name(result.getString("first_name"));
-		ct.setLast_name(result.getString("last_name"));
+//		ct.setFirst_name(result.getString("first_name"));
+//		ct.setLast_name(result.getString("last_name"));
+		ct.setFirst_name(result.getString("fn1"));
+		ct.setLast_name(result.getString("ln1"));
 		itc.setCt(ct);
 		
 		ExecutiveWorkflow workflow = new ExecutiveWorkflow();
