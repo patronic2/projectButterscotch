@@ -80,6 +80,23 @@ $(function () {
 })
 
 
+$(document).ready(function() {
+	$(".navsearch").keyup(function(){
+		$(".proc-card").show();
+		var input=$(".navsearch").val();
+		
+		var type=$("#filterList").val();
+		//console.log(type);
+		$(".proc-card").each(function(){
+			if(!$(this).find(type).text().includes(input) && input !=""){
+				$(this).hide();
+			}
+			
+		})
+	})
+});
+
+
 // $(document).ready(function(){
 //     $('.danger').popover({ 
 //       html : true,
