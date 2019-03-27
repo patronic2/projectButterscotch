@@ -317,10 +317,11 @@
 							<button type="button" class="summary-btn danger" href='#'
 								id="popover" data-html="true" data-toggle="popover"
 								data-trigger="hover" title="Summary"
-								data-content='
+								data-content=''></button>
                          <div class="card proc-card">
     <div class="card-header">${requests.requestId}</div>
 
+</c:forEach>
   <div class="container main-container">
     <!--Put the body of the file in here-->
     <div class="row" style="margin-bottom: 1%;">

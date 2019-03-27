@@ -1,6 +1,7 @@
 package dao.dtt.controllers;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,8 @@ import DDTProject.DTTdaoServices;
 import DDTProject.TrainingSchedule;
 
 import bl.SecurityCheck;
-import dao.trainingManagementStatus.ManagmentStatusDAO;
+import dao.dtt.trainingManagementStatus.ManagmentStatusDAO;
+
 
 @Controller
 public class dttController {
