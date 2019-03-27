@@ -40,7 +40,7 @@ public class SummaryMapper implements RowMapper<Summary>
 		sl.setProjectManager(projectManager);
 		
 		DDTTrainer trainer = new DDTTrainer();
-		trainer.setRequest_sent_date(result.getTimestamp("request_sent_date"));
+		trainer.setRequest_sent_date(result.getString("request_sent_date"));
 		trainer.setResponse(result.getString("response"));
 		trainer.setActive_status(result.getInt("active_status"));
 		sl.setTrainer(trainer);

@@ -30,8 +30,8 @@ public class InTrainingCardMapper implements RowMapper<InTrainingCard>
 		itc.setRequest(request);
 		
 		TrainingSchedule schedule = new TrainingSchedule();
-		schedule.setTraining_start_date(result.getTimestamp("training_start_date"));
-		schedule.setTraining_end_date(result.getTimestamp("training_end_date"));
+		schedule.setTraining_start_date(result.getString("training_start_date"));
+		schedule.setTraining_end_date(result.getString("training_end_date"));
 		itc.setSchedule(schedule);
 		
 		ManagmentStatus status =  new ManagmentStatus();

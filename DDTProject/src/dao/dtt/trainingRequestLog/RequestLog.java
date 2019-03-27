@@ -1,7 +1,5 @@
 package dao.dtt.trainingRequestLog;
 
-import java.sql.Timestamp;
-
 import dao.dtt.trainingRequest.TrainingRequest;
 import dao.dtt.trainingRequest.TrainingRequestDAO;
 
@@ -9,7 +7,7 @@ public class RequestLog {
 	private int request_log_id;
 	private int training_request_id;
 	private int status_changed_to;
-	private Timestamp status_change_time;
+	private String status_change_time;
 	private String description;
 	
 	public TrainingRequest getRequest(int training_request_id)
@@ -37,10 +35,10 @@ public class RequestLog {
 	public void setStatus_changed_to(int status_changed_to) {
 		this.status_changed_to = status_changed_to;
 	}
-	public Timestamp getStatus_change_time() {
+	public String getStatus_change_time() {
 		return status_change_time;
 	}
-	public void setStatus_change_time(Timestamp status_change_time) {
+	public void setStatus_change_time(String status_change_time) {
 		this.status_change_time = status_change_time;
 	}
 	public String getDescription() {

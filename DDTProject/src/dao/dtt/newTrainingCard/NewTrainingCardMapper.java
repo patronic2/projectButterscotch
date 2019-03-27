@@ -16,7 +16,7 @@ public class NewTrainingCardMapper implements RowMapper<NewTrainingCard>
 		ntc.setFirst_name(result.getString("first_name"));
 		ntc.setLast_name(result.getString("last_name"));
 		ntc.setRequest_training_module(result.getString("request_training_module"));
-		ntc.setRequest_start_date(result.getTimestamp("request_start_date"));
+		ntc.setRequest_start_date(result.getString("request_start_date"));
 		ntc.setStatus((result.getInt("Status")));
 		return ntc;
 	}

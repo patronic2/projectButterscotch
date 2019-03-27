@@ -14,7 +14,7 @@ public class RequestLogMapper implements RowMapper<RequestLog>
 		rl.setRequest_log_id(result.getInt("request_log_id"));
 		rl.setTraining_request_id(result.getInt("training_request_id"));
 		rl.setStatus_changed_to(result.getInt("status_changed_to"));
-		rl.setStatus_change_time(result.getTimestamp("status_change_time"));
+		rl.setStatus_change_time(result.getString("status_change_time"));
 		rl.setDescription(result.getString("description"));
 		return rl;
 	}
