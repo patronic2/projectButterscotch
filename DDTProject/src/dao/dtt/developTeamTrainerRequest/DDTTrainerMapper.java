@@ -12,7 +12,7 @@ public class DDTTrainerMapper implements RowMapper<DDTTrainer>
 		
 		DDTTrainer ddtrnr = new DDTTrainer();
 		ddtrnr.setDtt_trainer_request_id(result.getInt("dtt_trainer_request_id"));
-		ddtrnr.setRequest_sent_date(result.getTimestamp("request_sent_date"));
+		ddtrnr.setRequest_sent_date(result.getString("request_sent_date"));
 		ddtrnr.setTrainer_id(result.getInt("trainer_id"));
 		ddtrnr.setSchedule_id(result.getInt("schedule_id"));
 		ddtrnr.setTopic(result.getString("topic"));
