@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 public class TrainingSchedule {
 	private int trainingScheduleId;
-	private String trainingCity;
+	private String training_city;
 	private String trainingState;
 	private String trainingCountry;
 	private int trainingZipcode;
@@ -25,10 +25,10 @@ public class TrainingSchedule {
 		this.trainingScheduleId = trainingScheduleId;
 	}
 	public String getTrainingCity() {
-		return trainingCity;
+		return training_city;
 	}
 	public void setTrainingCity(String trainingCity) {
-		this.trainingCity = trainingCity;
+		this.training_city = trainingCity;
 	}
 	public String getTrainingState() {
 		return trainingState;

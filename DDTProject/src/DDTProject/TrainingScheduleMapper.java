@@ -11,7 +11,7 @@ public class TrainingScheduleMapper implements RowMapper<TrainingSchedule>
 			throws SQLException {
 		TrainingSchedule ts = new TrainingSchedule();
 		ts.setTrainingScheduleId(result.getInt("training_schedule_id"));
-		ts.setTrainingCity(result.getString("training_city"));
+		ts.setTraining_city(result.getString("training_city"));
 		ts.setTrainingState(result.getString("training_state"));
 		ts.setTrainingCountry(result.getString("training_country"));
 		ts.setTrainingZipcode(result.getInt("training_zipcode"));
