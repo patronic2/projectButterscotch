@@ -12,6 +12,14 @@
 //        });
 //    });
 
+
+        $(function () {
+    	$('[data-toggle=popover]').popover({
+   
+        html: true
+    	
+    	});
+
     function openNav() {
         document.getElementById("mySidebar").style.width = "350px";
     }
