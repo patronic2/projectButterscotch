@@ -209,9 +209,13 @@
               <td style="border: 0;" align="center">Training: ${newReqs.trainingModule}</td>
             </tr>
             <tr>
-              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} <button
-                  style="background-color:white; border:0px; float: right;" id="newTrainBut"><img width='20px' height='20px'
-                    src='./resources/images/rightTriangle.png'></button></td>
+              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} 
+              
+              <a href="toProcess/${newReqs.requestId}"><img width='20px' height='20px'
+                    src='./resources/images/rightTriangle.png'> </a></td>
+                    
+                    <!--  <button
+                  style="background-color:white; border:0px; float: right;" id="newTrainBut"></button>-->
             </tr>
           </table>
           <br>
