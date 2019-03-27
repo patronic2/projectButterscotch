@@ -187,31 +187,61 @@
 		<div class="row">
 			<div class="col-sm-2">
 				<!--------------------------------- NEW REQUESTS ----------------------------------->
-				<c:forEach var="newReqs" items="${TRM_DTT_Homepage1}">
-					<div>
-						<table class="newTrainTable1" border="4px" width='180px'
-							style="border-radius: 9px; border-color: royalblue; box-shadow: -5px 5px grey">
+ <c:forEach var="newReqs" items="${TRM_DTT_Homepage1}">
+        <div>
+          <table class="newTrainTable1" border="4px" width='180px' style="border-radius: 9px; border-color:royalblue; box-shadow: -5px 5px grey">
 
-							<tr>
-								<td style="border: 0;" align="center">Training:
-									${newReqs.trainingModule}</td>
-							</tr>
-							<tr>
-								<td style="border: 0" height="30px"><img width='20px'
-									height='20px' src='./resources/images/PM2.jpg'>:
-									${newReqs.firstName}
-									<button
-										style="background-color: white; border: 0px; float: right;"
-										id="newTrainBut">
-										<img width='20px' height='20px'
-											src='./resources/images/rightTriangle.png'>
-									</button></td>
-							</tr>
-						</table>
-						<br>
+            <tr>
+              <td style="border: 0;" align="center">Training: ${newReqs.trainingModule}</td>
+            </tr>
+            <tr>
+              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} 
+              
+              <a href="#" data-toggle="modal" data-target="#Process${newReqs.requestId}"><img width='20px' height='20px' src='./resources/images/rightTriangle.png'> </a></td>
+            </tr>
+            
+            <tr>
+            <td colspan="3">
+					<div class="modal" id="Process${newReqs.requestId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabelUpdate">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
 
+								<div class="modal-header">
+									<h4 class="modal-title" id="myModalLabelDelete">Choose Training Type</h4>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+								</div>
+
+								<!-- Modal body -->
+								<div class="modal-body">
+									<c:catch>
+										<form action="toProcess/${newReqs.requestId}">
+											<input type="submit" class="btn btn-primary" value="DTT" /><br>
+										</form>
+
+										<form action="#">
+											<input type="submit" class="btn btn-primary" value="ITT" /><br>
+										</form>
+										<form action="#">
+											<input type="submit" class="btn btn-primary" value="VTT" /><br>
+										</form>
+									</c:catch>
+								</div>
+
+								<!-- Modal footer -->
+								<div class="modal-footer">
+
+									<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+								</div>
+							</div>
+						</div>
 					</div>
-				</c:forEach>
+				</td>
+            </tr>
+          </table>
+          <br>
+          
+        </div>
+        </c:forEach>
 			</div>
 
 
