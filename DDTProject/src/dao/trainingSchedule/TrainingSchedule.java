@@ -12,10 +12,10 @@ public class TrainingSchedule {
 	private String training_time_zone;
 	private String training_location;
 	private String training_room_number;
-	private Timestamp training_start_date;
-	private Timestamp training_end_date;
+	private String training_start_date;
+	private String training_end_date;
 	private String training_break_down;
-	private URL training_url;
+	private String training_url;
 	private String training_phone;
 	
 	public int getTraining_schedule_id() {
@@ -66,16 +66,16 @@ public class TrainingSchedule {
 	public void setTraining_room_number(String training_room_number) {
 		this.training_room_number = training_room_number;
 	}
-	public Timestamp getTraining_start_date() {
+	public String getTraining_start_date() {
 		return training_start_date;
 	}
-	public void setTraining_start_date(Timestamp training_start_date) {
+	public void setTraining_start_date(String training_start_date) {
 		this.training_start_date = training_start_date;
 	}
-	public Timestamp getTraining_end_date() {
+	public String getTraining_end_date() {
 		return training_end_date;
 	}
-	public void setTraining_end_date(Timestamp training_end_date) {
+	public void setTraining_end_date(String training_end_date) {
 		this.training_end_date = training_end_date;
 	}
 	public String getTraining_break_down() {
@@ -84,10 +84,10 @@ public class TrainingSchedule {
 	public void setTraining_break_down(String training_break_down) {
 		this.training_break_down = training_break_down;
 	}
-	public URL getTraining_url() {
+	public String getTraining_url() {
 		return training_url;
 	}
-	public void setTraining_url(URL training_url) {
+	public void setTraining_url(String training_url) {
 		this.training_url = training_url;
 	}
 	public String getTraining_phone() {
