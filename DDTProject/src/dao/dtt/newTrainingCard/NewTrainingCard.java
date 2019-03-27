@@ -1,14 +1,12 @@
 package dao.dtt.newTrainingCard;
 
-import java.sql.Timestamp;
-
 public class NewTrainingCard 
 {
 	private int training_request_id;
 	private String first_name;
 	private String last_name;
 	private String request_training_module;
-	private Timestamp request_start_date;
+	private String request_start_date;
 	private int status;
 	
 	public int getTraining_request_id() {
@@ -35,11 +33,11 @@ public class NewTrainingCard
 	public void setRequest_training_module(String request_training_module) {
 		this.request_training_module = request_training_module;
 	}
-	public Timestamp getRequest_start_date() {
+	public String getRequest_start_date() {
 		
 		return request_start_date;
 	}
-	public void setRequest_start_date(Timestamp request_start_date) {
+	public void setRequest_start_date(String request_start_date) {
 		this.request_start_date = request_start_date;
 	}
 	public int getStatus() {

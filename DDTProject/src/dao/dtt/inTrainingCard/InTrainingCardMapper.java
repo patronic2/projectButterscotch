@@ -5,13 +5,13 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
-import dao.employee.Employee;
-import dao.executiveWorkflowStatus.ExecutiveWorkflow;
-import dao.executiveWorkflowStatus.ExecutiveWorkflowMapper;
-import dao.trainingManagementStatus.ManagmentStatus;
-import dao.trainingRequest.TrainingRequest;
-import dao.trainingSchedule.TrainingSchedule;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.employee.Employee;
+import dao.dtt.executiveWorkflowStatus.ExecutiveWorkflow;
+import dao.dtt.executiveWorkflowStatus.ExecutiveWorkflowMapper;
+import dao.dtt.trainingManagementStatus.ManagmentStatus;
+import dao.dtt.trainingRequest.TrainingRequest;
+import dao.dtt.trainingSchedule.TrainingSchedule;
 
 public class InTrainingCardMapper implements RowMapper<InTrainingCard>
 {
@@ -30,8 +30,8 @@ public class InTrainingCardMapper implements RowMapper<InTrainingCard>
 		itc.setRequest(request);
 		
 		TrainingSchedule schedule = new TrainingSchedule();
-		schedule.setTraining_start_date(result.getTimestamp("training_start_date"));
-		schedule.setTraining_end_date(result.getTimestamp("training_end_date"));
+		schedule.setTraining_start_date(result.getString("training_start_date"));
+		schedule.setTraining_end_date(result.getString("training_end_date"));
 		itc.setSchedule(schedule);
 		
 		ManagmentStatus status =  new ManagmentStatus();

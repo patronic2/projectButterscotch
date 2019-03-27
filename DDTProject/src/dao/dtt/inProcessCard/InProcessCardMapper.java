@@ -5,11 +5,11 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
-import dao.employee.Employee;
-import dao.trainingManagementStatus.ManagmentStatus;
-import dao.trainingRequest.TrainingRequest;
-import dao.trainingSchedule.TrainingSchedule;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.employee.Employee;
+import dao.dtt.trainingManagementStatus.ManagmentStatus;
+import dao.dtt.trainingRequest.TrainingRequest;
+import dao.dtt.trainingSchedule.TrainingSchedule;
 
 public class InProcessCardMapper implements RowMapper<InProcessCard>
 {
@@ -29,8 +29,8 @@ public class InProcessCardMapper implements RowMapper<InProcessCard>
 		ipc.setRequest(tr);
 		
 		TrainingSchedule ts = new TrainingSchedule();
-		ts.setTraining_start_date(result.getTimestamp("training_start_date"));
-		ts.setTraining_end_date(result.getTimestamp("training_end_date"));
+		ts.setTraining_start_date(result.getString("training_start_date"));
+		ts.setTraining_end_date(result.getString("training_end_date"));
 		ipc.setSchedule(ts);
 
 		ManagmentStatus s  = new ManagmentStatus();

@@ -5,13 +5,13 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
 import dao.dtt.developTeamTrainerRequest.DDTTrainer;
-import dao.employee.Employee;
-import dao.trainingManagementStatus.ManagmentStatus;
-import dao.trainingRequest.TrainingRequest;
-import dao.trainingSchedule.TrainingSchedule;
-import dao.trainingSchedule.TrainingScheduleMapper;
+import dao.dtt.employee.Employee;
+import dao.dtt.trainingManagementStatus.ManagmentStatus;
+import dao.dtt.trainingRequest.TrainingRequest;
+import dao.dtt.trainingSchedule.TrainingSchedule;
+import dao.dtt.trainingSchedule.TrainingScheduleMapper;
 
 public class SummaryMapper implements RowMapper<Summary> 
 {
@@ -40,7 +40,7 @@ public class SummaryMapper implements RowMapper<Summary>
 		sl.setProjectManager(projectManager);
 		
 		DDTTrainer trainer = new DDTTrainer();
-		trainer.setRequest_sent_date(result.getTimestamp("request_sent_date"));
+		trainer.setRequest_sent_date(result.getString("request_sent_date"));
 		trainer.setResponse(result.getString("response"));
 		trainer.setActive_status(result.getInt("active_status"));
 		sl.setTrainer(trainer);

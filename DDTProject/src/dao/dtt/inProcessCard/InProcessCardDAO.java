@@ -25,7 +25,9 @@ public class InProcessCardDAO
 				+ "join TRAINING_REQUEST tr on dtr.training_request_id = tr.training_request_id "
 				+ "join TRAINING_SCHEDULE ts on dtr.schedule_id = ts.training_schedule_id "
 				+ "join TRAINING_MANAGEMENT_STATUS s on tr.training_request_id = s.training_request_id "
-				+ "join EMPLOYEE e on e.employee_id = tr.requester_id", 
+				+ "join EMPLOYEE e on e.employee_id = tr.requester_id "
+				+ "where s.status=203 or s.status=204 or s.status=205 or s.status=206 or s.status=207 "
+				+ "or s.status=208 or s.status=209 ", 
 				new Object[]{},new InProcessCardMapper());
 		return InProcessCardList;
 	}

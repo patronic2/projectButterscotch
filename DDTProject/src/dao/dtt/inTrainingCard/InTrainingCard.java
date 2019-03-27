@@ -1,11 +1,11 @@
 package dao.dtt.inTrainingCard;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
-import dao.employee.Employee;
-import dao.executiveWorkflowStatus.ExecutiveWorkflow;
-import dao.trainingManagementStatus.ManagmentStatus;
-import dao.trainingRequest.TrainingRequest;
-import dao.trainingSchedule.TrainingSchedule;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.employee.Employee;
+import dao.dtt.executiveWorkflowStatus.ExecutiveWorkflow;
+import dao.dtt.trainingManagementStatus.ManagmentStatus;
+import dao.dtt.trainingRequest.TrainingRequest;
+import dao.dtt.trainingSchedule.TrainingSchedule;
 
 public class InTrainingCard 
 {
