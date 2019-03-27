@@ -155,18 +155,19 @@
 	<form class="form-inline">
 		<select name="Filters" style="border-radius: 0%" id="filterList"
 			class="form-control">
-			<option value=".pmname">Trainer Name</option>
+			<option value=".pmname">Project Manager</option>
 			<option value=".location">Location</option>
 			<option value=".trainingType">Training Type</option>
 			<option value=".startDate">Start Date</option>
-			<option value=".groupSize">groupSize</option>
-		</select> <input class="form-control tst" style="border-radius: 0%;"
+			<option value=".groupSize">Group Size</option>
+			<option value=".requestId">Request ID</option>
+		</select> <input class="form-control navsearch" style="border-radius: 0%;"
 			type="text" placeholder="Search">
 
 	</form>
 	<div class="Collapse navbar-collapse justify-content-end">
 		<button class="openbtn" onclick="openNav()" title="Executive View">
-			☰</button>
+			<i class="fas fa-angle-double-left"></i></button>
 	</div>
 
 	</nav>
@@ -250,7 +251,7 @@
 
 				<c:forEach var="requests" items="${TRM_DTT_Homepage}" varStatus="index">
 					<div class="card proc-card proc-card-a">
-						<div class="card-header">${requests.requestId}
+						<div class="card-header requestId">${requests.requestId}
 							<button type="button" class="summary-btn danger" href='#'
 								id="popover" data-html="true" data-toggle="popover"
 								data-trigger="hover" title="Summary"
@@ -279,8 +280,8 @@
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-user"
 										title="Project Manager"></i></td>
-									<td class="pmname"><p>hello</p> 
-										${requests.lastName}</td>
+									<td class="pmname">${requests.firstName} ${requests.lastName}</td>
+
 									<td rowspan="5" class="align-bottom"><button type="button"
 											class="btn btn-primary proc-btn" data-toggle="modal"
 											data-target="#edit_steps${requests.requestId}">Edit</button></td>
@@ -598,7 +599,7 @@
     </script>
 
 		<div class="container">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
 
 			<br>
 			<c:forEach var="wf" items="${TRM_DTT_Homepage3}">
@@ -681,7 +682,7 @@
 							<input type="checkbox" class="wfcl" name="training_completed" value="0" /> Training Completed<br>
 						</c:if>
 						
-							<input type="submit" label="Save" />
+							<input type="submit" label="Save" value="Save" class="btn btn-primary btn-wf" />
 						</form>
 					<script>
 					$(document).ready(function() {

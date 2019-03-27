@@ -502,3 +502,14 @@ padding-left: 15px;
   margin-bottom: 25px;
 }
 
+/* Workflow view cards */
+.container input.wfcl {
+	width: 0;	
+}
+
+div#exec-table .btn-wf {
+	text-align: center;
+	width: 100px;
+	padding: 0;
+	height: 2rem;
+}
