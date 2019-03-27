@@ -53,5 +53,5 @@ public class ExecutiveWorkflowDAO
 				("select * from Executive_Workflow_Status where executive_workflow_status_id=?", 
 				new Object[]{executive_workflow_status_id},new ExecutiveWorkflowMapper());
 		return trainingRequest.get(0);
-	}
+	}	
 }

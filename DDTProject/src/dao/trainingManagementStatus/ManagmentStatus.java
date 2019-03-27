@@ -1,9 +1,19 @@
 package dao.trainingManagementStatus;
 
+import dao.trainingRequest.TrainingRequest;
+import dao.trainingRequest.TrainingRequestDAO;
+
 public class ManagmentStatus {
 	private int training_management_status_id;
 	private int training_request_id;
 	private int status;
+	
+	public TrainingRequest getRequest(int training_request_id)
+	{
+		TrainingRequestDAO trd = new TrainingRequestDAO();
+		TrainingRequest tr = trd.getTrainingRequest(training_request_id);
+		return tr;		
+	}
 	
 	public int getTraining_management_status_id() {
 		return training_management_status_id;

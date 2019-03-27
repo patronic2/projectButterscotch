@@ -2,6 +2,9 @@ package dao.trainingRequest;
 
 import java.sql.Timestamp;
 
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
+
 public class TrainingRequest {
 	private int training_request_id;
 	private int requester_id;
@@ -18,6 +21,13 @@ public class TrainingRequest {
 	private int request_project_spoc;
 	private Timestamp time_requested;
 	private String justification_of_request;
+	
+	public Employee getEmployeeDetails(int employee_id)
+	{
+		EmployeeDAO ed = new EmployeeDAO();
+		Employee e = ed.getEmployee(employee_id);
+		return e;	
+	}
 	 
 	public int getTraining_request_id() {
 		return training_request_id;

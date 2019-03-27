@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
 import dao.dtt.developTeamTrainerRequest.DDTTrainer;
 import dao.employee.Employee;
 import dao.trainingManagementStatus.ManagmentStatus;
