@@ -16,4 +16,5 @@
 	<bean id="jtemp" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="DataSource" ref="ds" />
 	</bean>
+
 </beans>
