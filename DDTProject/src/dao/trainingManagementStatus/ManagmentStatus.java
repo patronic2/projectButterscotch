@@ -3,7 +3,7 @@ package dao.trainingManagementStatus;
 public class ManagmentStatus {
 	private int training_management_status_id;
 	private int training_request_id;
-	private int status;
+	private String status;
 	
 	public int getTraining_management_status_id() {
 		return training_management_status_id;
@@ -17,10 +17,10 @@ public class ManagmentStatus {
 	public void setTraining_request_id(int training_request_id) {
 		this.training_request_id = training_request_id;
 	}
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 }

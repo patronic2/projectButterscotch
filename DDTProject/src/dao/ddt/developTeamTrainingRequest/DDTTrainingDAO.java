@@ -21,14 +21,15 @@ public class DDTTrainingDAO
 				new Object[]{},new DDTTrainingMapper());
 		return DDTTrainingList;
 	}
-	public void updateTrainingRequest(int Dtt_training_id,int schedule_id,int executive_id,
-			String trainer_approval_mail,String trainer_manager_approval_mail,String description_of_status)
+	public void updateTrainingRequest(int Dtt_training_id,int training_request_id,int trainer_request_id,
+			int schedule_id,int executive_id,String trainer_approval_mail,
+			String trainer_manager_approval_mail,String description_of_status)
 	{
-		temp.update("update Develop_Team_Training_Request set schedule_id=?,executive_id=?,"
-				+ "trainer_approval_mail=?,trainer_manager_approval_mail=?,"
+		temp.update("update Develop_Team_Training_Request set training_request_id=?,trainer_request_id=?,"
+				+ "schedule_id=?,executive_id=?,trainer_approval_mail=?,trainer_manager_approval_mail=?,"
 				+ "description_of_status=? where Dtt_training_id=?", 
-				new Object[]{schedule_id,executive_id,trainer_approval_mail,
-					trainer_manager_approval_mail,description_of_status,Dtt_training_id});
+				new Object[]{training_request_id,trainer_request_id,schedule_id,executive_id,
+				trainer_approval_mail,trainer_manager_approval_mail,description_of_status,Dtt_training_id});
 	}
 	public void insertDTTraining(int training_request_id,int trainer_request_id,
 			int schedule_id,int executive_id,String trainer_approval_mail,

@@ -22,12 +22,14 @@ public class DDTTrainerDOA
 				new Object[]{},new DDTTrainerMapper());
 		return DDTTrainerList;
 	}
-	public void updateTrainerRequest(int dtt_trainer_request_id,int trainer_id,
+	public void updateTrainerRequest(int dtt_trainer_request_id,Timestamp request_sent_date,int trainer_id,
 			int schedule_id,String topic,String comments,String response,int active_status)
 	{
-		temp.update("update Develop_Team_Trainier_Request set trainer_id=?,schedule_id=?,topic=?,"
-				+ "comments=?,response=?,active_status=? where Dtt_training_id=?", 
-				new Object[]{trainer_id,schedule_id,topic,comments,response,active_status,dtt_trainer_request_id});
+		temp.update("update Develop_Team_Trainier_Request set training_request_id=?,trainer_request_id=?,"
+				+ "schedule_id=?,executive_id=?,trainer_approval_mail=?,trainer_manager_approval_mail=?,"
+				+ "description_of_status=? where Dtt_training_id=?", 
+				new Object[]{request_sent_date,trainer_id,schedule_id,topic,
+						comments,response,active_status,dtt_trainer_request_id});
 	}
 	public void insertDTTrainer(int dtt_trainer_request_id,Timestamp request_sent_date,int trainer_id,
 			int schedule_id,String topic,String comments,String response,int active_status)
