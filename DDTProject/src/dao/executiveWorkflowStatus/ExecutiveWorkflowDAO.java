@@ -21,15 +21,15 @@ public class ExecutiveWorkflowDAO
 				new Object[]{},new ExecutiveWorkflowMapper());
 		return executiveWorkflowList;
 	}
-	public void updateExecutiveWorkflow(int executive_workflow_status_id,
-			int sent_invitations,int completed_skillport_enrollment,
+	public void updateExecutiveWorkflow(int executive_workflow_status_id,int training_request_id,
+			int executive_id,int sent_invitations,int completed_skillport_enrollment,
 			int assessments_recorded,int vendor_training_clearance,int completed_feedback,
 			int training_completed)
 	{
-		temp.update("update Executive_Workflow_Status set sent_invitations=?"
+		temp.update("update Executive_Workflow_Status set training_request_id=?,executive_id=?,sent_invitations=?"
 				+ ",completed_skillport_enrollment=?,assessments_recorded=?,vendor_training_clearance=?"
 				+ ",completed_feedback=?,training_completed=? where executive_workflow_status_id=?", 
-				new Object[]{sent_invitations,completed_skillport_enrollment,
+				new Object[]{training_request_id,executive_id,sent_invitations,completed_skillport_enrollment,
 						assessments_recorded,vendor_training_clearance,completed_feedback,
 						training_completed,executive_workflow_status_id});
 	}

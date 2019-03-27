@@ -14,7 +14,7 @@ public class ManagmentStatusMapper implements RowMapper<ManagmentStatus>
 		ManagmentStatus ms = new ManagmentStatus();
 		ms.setTraining_management_status_id(result.getInt("training_management_status_id"));
 		ms.setTraining_request_id(result.getInt("training_request_id"));
-		ms.setStatus(result.getInt("status"));
+		ms.setStatus(result.getString("status"));
 		return ms;
 	}
 

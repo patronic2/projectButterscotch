@@ -21,11 +21,12 @@ public class ManagmentStatusDAO
 				new Object[]{},new ManagmentStatusMapper());
 		return managmentStatusList;
 	}
-	public void updateManagmentStatus(int training_management_status_id,String status)
+	public void updateManagmentStatus(int training_management_status_id,int training_request_id,
+			String status)
 	{
-		temp.update("update Training_Management_Status set status=? "
+		temp.update("update Training_Management_Status set training_request_id=,status=? "
 				+ "where training_management_status_id=?", 
-				new Object[]{status,training_management_status_id});
+				new Object[]{training_request_id,status,training_management_status_id});
 	}
 	public void insertManagementStatus(int training_request_id,String status)
 	{

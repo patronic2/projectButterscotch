@@ -21,10 +21,10 @@ public class SpocMasterDAO
 				new Object[]{},new SpocMasterMapper());
 		return spocMasterList;
 	}
-	public void updateSpocMasterValue(int spoc_master_id,String spoc_vertical)
+	public void updateSpocMasterValue(int spoc_master_id, int spoc_emp_id, String spoc_vertical)
 	{
-		temp.update("update Spoc_Master set spoc_vertical=? where spoc_master_id=?", new Object[]
-				{spoc_vertical,spoc_master_id});
+		temp.update("update Spoc_Master set spoc_vertical=,spoc_emp_id=? where spoc_master_id=?", new Object[]
+				{spoc_vertical,spoc_emp_id,spoc_master_id});
 	}
 	public void insertSpocMaster(int spoc_master_id, int spoc_emp_id, String spoc_vertical)
 	{

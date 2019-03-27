@@ -12,14 +12,6 @@
 //        });
 //    });
 
-
-        $(function () {
-    	$('[data-toggle=popover]').popover({
-   
-        html: true
-    	
-    	});
-
     function openNav() {
         document.getElementById("mySidebar").style.width = "350px";
     }
@@ -37,9 +29,9 @@
         this.el = el || {};
         this.multiple = multiple || false;
 
-        // Variables
+        // Variables privadas
         var links = this.el.find('.link');
-        // Event
+        // Evento
         links.on('click', {
             el: this.el,
             multiple: this.multiple
@@ -65,8 +57,8 @@
 
     $.extend($.datepicker, {
         _checkOffset: function (inst, offset, isFixed) {
-            offset.top = 30;
-            offset.left = 1075;
+            offset.top = 140;
+            offset.left = 870;
             return offset;
         }
     });
@@ -80,9 +72,9 @@
     const article = document.querySelector(".approval");
 
     if ((article.dataset.dec) == "approved") {
-        $(".approval").css({"border": "5px solid #7FFF00" }) 
+        $(".approval").css("background-color", "#7FFF00");
     } else {
-        $(".approval").css({"border": "5px solid #FF0000" }) 
+        $(".approval").css("background-color", "Red");
         $("input").prop('disabled', true);
     }
 
