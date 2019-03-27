@@ -12,8 +12,10 @@
     
     <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<property name="username" value="system"/>
+
     	<property name="password" value="syntel_db"/>
     	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+
     	<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
     </bean>    
     

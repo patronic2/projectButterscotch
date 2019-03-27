@@ -29,9 +29,9 @@ $(function () {
         this.el = el || {};
         this.multiple = multiple || false;
 
-        // Variables privadas
+        // Variables
         var links = this.el.find('.link');
-        // Evento
+        // Event
         links.on('click', {
             el: this.el,
             multiple: this.multiple
