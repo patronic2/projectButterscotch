@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
 import dao.employee.Employee;
 import dao.executiveWorkflowStatus.ExecutiveWorkflow;
 import dao.executiveWorkflowStatus.ExecutiveWorkflowMapper;
@@ -44,8 +44,10 @@ public class InTrainingCardMapper implements RowMapper<InTrainingCard>
 		itc.setPm(pm);
 		
 		Employee ct = new Employee();
-		ct.setFirst_name(result.getString("first_name"));
-		ct.setLast_name(result.getString("last_name"));
+//		ct.setFirst_name(result.getString("first_name"));
+//		ct.setLast_name(result.getString("last_name"));
+		ct.setFirst_name(result.getString("fn1"));
+		ct.setLast_name(result.getString("ln1"));
 		itc.setCt(ct);
 		
 		ExecutiveWorkflow workflow = new ExecutiveWorkflow();

@@ -1,6 +1,6 @@
 package dao.dtt.inTrainingCard;
 
-import dao.ddt.developTeamTrainingRequest.DDTTraining;
+import dao.dtt.developTeamTrainingRequest.DDTTraining;
 import dao.employee.Employee;
 import dao.executiveWorkflowStatus.ExecutiveWorkflow;
 import dao.trainingManagementStatus.ManagmentStatus;

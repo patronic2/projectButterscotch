@@ -1,5 +1,10 @@
 package dao.executiveWorkflowStatus;
 
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
+import dao.trainingRequest.TrainingRequest;
+import dao.trainingRequest.TrainingRequestDAO;
+
 
 public class ExecutiveWorkflow {
 	private int executive_workflow_status_id;
@@ -17,6 +22,20 @@ public class ExecutiveWorkflow {
 		if(a==1)
 			{ return true; }
 		return false;
+	}
+	
+	public TrainingRequest getRequest(int training_request_id)
+	{
+		TrainingRequestDAO trd = new TrainingRequestDAO();
+		TrainingRequest tr = trd.getTrainingRequest(training_request_id);
+		return tr;		
+	}
+	
+	public Employee getEmployeeDetails(int executive_id)
+	{
+		EmployeeDAO ed = new EmployeeDAO();
+		Employee d = ed.getEmployee(executive_id);
+		return d;	
 	}
 	
 	public int getExecutive_workflow_status_id() {

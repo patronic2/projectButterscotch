@@ -11,9 +11,9 @@ public class SecurityCheck {
 		MyTemplate objTemplate = new MyTemplate();
 		JdbcTemplate temp = objTemplate.getTemplate();
 		
-		//select count(*) from securitytable where userid=? and userpassword = ?
+		//select count(*) from employee where userid=? and userpassword = ?
 		
-		int result = temp.queryForInt("select count(*) from securitytable where userid=? and userpassword = ?",
+		int result = temp.queryForInt("select count(*) from employee where userid=? and userpassword = ?",
 				new Object[]{username, userpassword});
 		
 		if(result == 1)

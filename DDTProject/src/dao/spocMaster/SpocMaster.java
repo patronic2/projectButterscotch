@@ -1,10 +1,20 @@
 package dao.spocMaster;
 
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
+
 public class SpocMaster 
 {
 	private int spoc_master_id;
 	private int spoc_emp_id;
 	private String spoc_vertical;
+	
+	public Employee getEmployeeDetails(int employee_id)
+	{
+		EmployeeDAO ed = new EmployeeDAO();
+		Employee e = ed.getEmployee(employee_id);
+		return e;	
+	}
 
 	public int getSpoc_master_id() {
 		return spoc_master_id;

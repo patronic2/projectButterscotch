@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import DDTProject.DTTNewRequestCard;
@@ -14,6 +16,10 @@ import DDTProject.DTTdaoServices;
 import DDTProject.TrainingSchedule;
 
 import bl.SecurityCheck;
+import dao.dtt.inTrainingCard.InTrainingCard;
+import dao.dtt.inTrainingCard.InTrainingCardDAO;
+import dao.executiveWorkflowStatus.ExecutiveWorkflow;
+import dao.executiveWorkflowStatus.ExecutiveWorkflowDAO;
 
 @Controller
 public class dttController {
@@ -30,25 +36,32 @@ public class dttController {
 	{
 		List<DTTProcessingCard> cards;
 		List<DTTNewRequestCard> newReqCards;
-		List<TrainingSchedule> schedules;
 
+		List<ExecutiveWorkflow> wfCards;
+		List<InTrainingCard> itc;
 		
 		cards = new DTTdaoServices().getRequestsProcessing();
 		newReqCards = new DTTdaoServices().getNewRequests();
-		schedules = new DTTdaoServices().getTrainingSchedule();
-		System.out.println(schedules);
+		wfCards = new ExecutiveWorkflowDAO().getExecutiveWorkflows();
+		itc = new InTrainingCardDAO().getInTrainingCardList();
+		
+		
 		map.addAttribute("TRM_DTT_Homepage", cards);
 		map.addAttribute("TRM_DTT_Homepage1", newReqCards);
-		map.addAttribute("TRM_DTT_Homepage_Schedules", schedules);
+		map.addAttribute("TRM_DTT_Homepage2", wfCards);
+		map.addAttribute("TRM_DTT_Homepage3", itc);
 
-//		List<String> names = new ArrayList<String>();
-//		names.add("Name1");
-//		names.add("Name2");
-//		names.add("Name3");
-//		names.add("Name4");
-//
-//		map.addAttribute("TRM_DTT_Homepage", names);
 		return "TRM_DTT_Homepage";
+	}
+	
+	@RequestMapping(value="updateWorkflowStatus/{executive_workflow_status_id}")
+	public String updateStatus(@PathVariable("executive_workflow_status_id") int wfid, @ModelAttribute("ewf") ExecutiveWorkflow ewf)
+	{
+		new ExecutiveWorkflowDAO().updateExecutiveWorkflow(ewf.getExecutive_workflow_status_id(), ewf.getSent_invitations(),
+				ewf.getCompleted_skillport_enrollment(), ewf.getAssessments_recorded(), ewf.getVendor_training_clearance(),
+				ewf.getCompleted_feedback(), ewf.getTraining_completed());
+		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/login")
