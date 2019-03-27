@@ -476,17 +476,21 @@ padding-left: 15px;
 }
 
 /* to get super fun trainer stuff to line up */
-.stupidLeft{width:25%; float:left;}
-.stupidRight{width:65%;float:left;margin:auto;width:75%;}
+.stupidLeft{float:left;}
+.stupidRight{float:left;margin:auto;}
 .trainerList{float: none !important}
 
 
-.justwork {
-	display: inline-block;
-}	
-.justworkdate {
-	padding-right: 25px;
-	float: right;
+.row {
+  width: 100%;
+  /*margin: 0 auto;*/
+
+}
+.block {
+  width: 50px;
+  /*float: left;*/
+    display: inline-block;
+    
 }
 
 
