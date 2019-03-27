@@ -1,4 +1,4 @@
-//poppers errwhere
+
 $(function () {
     $('[data-toggle=popover]').popover({
         html: true,

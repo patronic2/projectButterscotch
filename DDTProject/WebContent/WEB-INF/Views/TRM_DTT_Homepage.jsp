@@ -30,6 +30,8 @@
 
 <!-- Custom JS -->
 <script src="./resources/js/main.js"></script>
+<script src="./resources/css/main.js"></script>
+
 
 </head>
 
@@ -216,7 +218,7 @@
 			<!-------------------------- TRAINING REQUESTS BEING PROCESSED ---------------------------------->
 			<div class="col-sm-10 form-inline" id="col-sm-1">
 
-				<c:forEach var="requests" items="${TRM_DTT_Homepage}">
+				<c:forEach var="requests" items="${TRM_DTT_Homepage}" varStatus="index">
 					<div class="card proc-card proc-card-a">
 						<div class="card-header">${requests.requestId}
 							<button type="button" class="summary-btn danger" href='#'
@@ -247,7 +249,7 @@
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-user"
 										title="Project Manager"></i></td>
-									<td class="pmname">${requests.firstName}
+									<td class="pmname"><p>hello</p> 
 										${requests.lastName}</td>
 									<td rowspan="5" class="align-bottom"><button type="button"
 											class="btn btn-primary proc-btn" data-toggle="modal"
@@ -405,7 +407,10 @@
                           <td align = "right">
                             <label class="location">City: </label>
 							</td>
-							<td align = "left"><input type="text" /></td>
+							<td>
+						
+							</td>
+							<td align = "left"><input type="text"  value="" /></td>
 						</tr>
                             
 						<tr>

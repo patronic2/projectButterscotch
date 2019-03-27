@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import DDTProject.DTTNewRequestCard;
 import DDTProject.DTTProcessingCard;
 import DDTProject.DTTdaoServices;
+import DDTProject.TrainingSchedule;
+
 import bl.SecurityCheck;
 import dao.dtt.inTrainingCard.InTrainingCard;
 import dao.dtt.inTrainingCard.InTrainingCardDAO;
@@ -34,6 +36,7 @@ public class dttController {
 	{
 		List<DTTProcessingCard> cards;
 		List<DTTNewRequestCard> newReqCards;
+
 		List<ExecutiveWorkflow> wfCards;
 		List<InTrainingCard> itc;
 		
