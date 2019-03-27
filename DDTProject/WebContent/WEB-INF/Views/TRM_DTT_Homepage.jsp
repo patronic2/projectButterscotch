@@ -317,10 +317,120 @@
 							<button type="button" class="summary-btn danger" href='#'
 								id="popover" data-html="true" data-toggle="popover"
 								data-trigger="hover" title="Summary"
-								data-content='
+								data-content=''></button>
                          <div class="card proc-card">
     <div class="card-header">${requests.requestId}</div>
 
+</c:forEach>
+  <div class="container main-container">
+    <!--Put the body of the file in here-->
+    <div class="row" style="margin-bottom: 1%;">
+      <div class="col-sm-3">
+        <h3>New Requests</h3>
+      </div>
+      <div class="col-sm-9">
+        <h3 class="text-center">Training Requests Being Processed</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <!--------------------------------- NEW REQUESTS ----------------------------------->
+        <c:forEach var="newReqs" items="${TRM_DTT_Homepage1}">
+        <div>
+          <table class="newTrainTable1" border="4px" width='180px' style="border-radius: 9px; border-color:royalblue; box-shadow: -5px 5px grey">
+
+            <tr>
+              <td style="border: 0;" align="center">Training: ${newReqs.trainingModule}</td>
+            </tr>
+            <tr>
+              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} 
+              
+              <a href="#" data-toggle="modal" data-target="#Process${newReqs.requestId}"><img width='20px' height='20px' src='./resources/images/rightTriangle.png'> </a></td>
+            </tr>
+            
+            <tr>
+            <td colspan="3">
+					<div class="modal" id="Process${newReqs.requestId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabelUpdate">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+
+								<div class="modal-header">
+									<h4 class="modal-title" id="myModalLabelDelete">Choose Training Type</h4>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">�</button>
+								</div>
+
+								<!-- Modal body -->
+								<div class="modal-body">
+									<c:catch>
+										<form action="toProcess/${newReqs.requestId}">
+											<input type="submit" class="btn btn-primary" value="DTT" /><br>
+										</form>
+
+										<form action="#">
+											<input type="submit" class="btn btn-primary" value="ITT" /><br>
+										</form>
+										<form action="#">
+											<input type="submit" class="btn btn-primary" value="VTT" /><br>
+										</form>
+									</c:catch>
+								</div>
+
+								<!-- Modal footer -->
+								<div class="modal-footer">
+
+									<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
+            </tr>
+          </table>
+          <br>
+          
+        </div>
+        </c:forEach>
+      </div>
+
+
+      <!-------------------------- TRAINING REQUESTS BEING PROCESSED ---------------------------------->
+      <div class="col-sm-10 form-inline" id="col-sm-1">
+      
+	<c:forEach var="requests" items="${TRM_DTT_Homepage}">
+        <div class="card proc-card proc-card-a">
+          <div class="card-header">${requests.requestId} <button type="button" class="summary-btn danger" href='#' id="popover"
+              data-toggle="popover" data-trigger="hover" title="Summary">....</button></div>
+          <div class="card-body proc-card-body">
+            <table width="100%">
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-user" title="Project Manager"></i></td>
+                <td class="pmname">${requests.firstName} ${requests.lastName}</td>
+                <td rowspan="5" class="align-bottom"><button type="button" class="btn btn-primary proc-btn" data-toggle="modal"
+                    data-target="#edit_steps${requests.requestId}">Edit</button></td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-chalkboard-teacher" title="Training"></i></td>
+                <td class="trainingType">${requests.trainingType}: ${requests.trainingModule} (${requests.trainingModuleScope})</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-calendar-alt" title="Start Date"></i></td>
+                <td class="startDate">${requests.startDate}</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-users" title="Number of Participants"></i></td>
+                <td class="groupSize">${requests.approxParticipants}</td>
+              </tr>
+              <tr>
+                <td class="proc-card-icon-col"><i class="fas fa-map-marker-alt" title="Location"></i></td>
+                <td class="location">${requests.location}</td>
+              </tr>
+            </table>
+            
+            
+<div id="popover_content_wrapper" style="display: none;">
+  <div class="card proc-card">
+    <div class="card-header">10001 </div>
     <div class="card-body proc-card-body">
       <i class="fas fa-chalkboard-teacher" title="Training"></i> <span id="summary-training">Java</span><br>
       <i class="fas fa-user" title="Project Manager"></i> <span id="summary-pm">${requests.firstName}</span><br>

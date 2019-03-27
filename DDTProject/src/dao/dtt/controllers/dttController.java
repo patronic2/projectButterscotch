@@ -1,12 +1,14 @@
 package dao.dtt.controllers;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import DDTProject.DTTNewRequestCard;
@@ -15,6 +17,8 @@ import DDTProject.DTTdaoServices;
 import DDTProject.TrainingSchedule;
 
 import bl.SecurityCheck;
+import dao.dtt.trainingManagementStatus.ManagmentStatusDAO;
+
 
 @Controller
 public class dttController {
@@ -65,6 +69,18 @@ public class dttController {
 		else
 			model.addAttribute("result", false);
 			return "login";
+	}
+	
+	@RequestMapping(value="toProcess/{requestId}")
+	public String changeStat(@PathVariable("requestId") int requestId)
+	{
+		System.out.println("got called");
+		String stat = "203";
+		ManagmentStatusDAO update = new ManagmentStatusDAO();
+		System.out.println("got Management Status");
+		update.updateManagmentStatus(requestId, stat);
+		System.out.println("updated status");
+		return "redirect:/";
 	}
 
 }

@@ -6,7 +6,7 @@ import dao.dtt.trainingRequest.TrainingRequestDAO;
 public class ManagmentStatus {
 	private int training_management_status_id;
 	private int training_request_id;
-	private String status;
+	private int status;
 	
 	public TrainingRequest getRequest(int training_request_id)
 	{
@@ -27,10 +27,10 @@ public class ManagmentStatus {
 	public void setTraining_request_id(int training_request_id) {
 		this.training_request_id = training_request_id;
 	}
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 }
