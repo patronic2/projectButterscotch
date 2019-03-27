@@ -2,6 +2,11 @@ package dao.dtt.developTeamTrainerRequest;
 
 import java.sql.Timestamp;
 
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
+import dao.trainingSchedule.TrainingSchedule;
+import dao.trainingSchedule.TrainingScheduleDAO;
+
 public class DDTTrainer {
 	private int dtt_trainer_request_id;
 	private Timestamp request_sent_date;
@@ -11,6 +16,20 @@ public class DDTTrainer {
 	private String comments;
 	private String response;
 	private int active_status;	
+	
+	public Employee getEmployeeDetails(int employee_id)
+	{
+		EmployeeDAO ed = new EmployeeDAO();
+		Employee e = ed.getEmployee(employee_id);
+		return e;	
+	}
+	
+	public TrainingSchedule getSchedule(int schedule_id)
+	{
+		TrainingScheduleDAO tsd = new TrainingScheduleDAO();
+		TrainingSchedule ts = tsd.getTrainingSchedule(schedule_id);
+		return ts;
+	}
 	
 	public int getDtt_trainer_request_id() {
 		return dtt_trainer_request_id;

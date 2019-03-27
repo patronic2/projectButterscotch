@@ -1,4 +1,4 @@
-package dao.ddt.developTeamTrainingRequest;
+package dao.dtt.developTeamTrainingRequest;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
