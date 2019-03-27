@@ -2,10 +2,10 @@ package dao.dtt.summary;
 
 import dao.dtt.developTeamTrainingRequest.DDTTraining;
 import dao.dtt.developTeamTrainerRequest.DDTTrainer;
-import dao.employee.Employee;
-import dao.trainingManagementStatus.ManagmentStatus;
-import dao.trainingRequest.TrainingRequest;
-import dao.trainingSchedule.TrainingSchedule;
+import dao.dtt.employee.Employee;
+import dao.dtt.trainingManagementStatus.ManagmentStatus;
+import dao.dtt.trainingRequest.TrainingRequest;
+import dao.dtt.trainingSchedule.TrainingSchedule;
 
 public class Summary 
 {

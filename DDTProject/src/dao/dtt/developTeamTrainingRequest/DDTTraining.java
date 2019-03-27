@@ -2,12 +2,12 @@ package dao.dtt.developTeamTrainingRequest;
 
 import dao.dtt.developTeamTrainerRequest.DDTTrainer;
 import dao.dtt.developTeamTrainerRequest.DDTTrainerDOA;
-import dao.employee.Employee;
-import dao.employee.EmployeeDAO;
-import dao.trainingRequest.TrainingRequest;
-import dao.trainingRequest.TrainingRequestDAO;
-import dao.trainingSchedule.TrainingSchedule;
-import dao.trainingSchedule.TrainingScheduleDAO;
+import dao.dtt.employee.Employee;
+import dao.dtt.employee.EmployeeDAO;
+import dao.dtt.trainingRequest.TrainingRequest;
+import dao.dtt.trainingRequest.TrainingRequestDAO;
+import dao.dtt.trainingSchedule.TrainingSchedule;
+import dao.dtt.trainingSchedule.TrainingScheduleDAO;
 
 public class DDTTraining {
 	private int Dtt_training_id;
