@@ -21,12 +21,6 @@ public class ParticipantsDAO
 				new Object[]{},new ParticipantsMapper());
 		return participantsList;
 	}
-	public void updateParticipants(int training_participant_id,int participant_employee_id,
-			int training_session_attended)
-	{
-		temp.update("update Training_Participants set participant_employee_id=,training_session_attended=? where training_participant_id=?", 
-				new Object[]{participant_employee_id,training_session_attended,training_participant_id});
-	}
 	public void insertParticipants(int participant_employee_id,	int training_session_attended)
 	{
 		temp.update("insert into Training_Participants values(training_participant_seq.nextval,?,?)",

@@ -22,12 +22,12 @@ public class RequestLogDAO
 				new Object[]{},new RequestLogMapper());
 		return requestLogList;
 	}
-	public void updateRequestLog(int request_log_id,int training_request_id,int status_changed_to,
+	public void updateRequestLog(int request_log_id,int status_changed_to,
 			Timestamp status_change_time,String description)
 	{
-		temp.update("update Training_Request_Log set training_request_id=,status_changed_to=?,"
-				+ "status_change_time=,description=? where request_log_id=?", 
-				new Object[]{training_request_id,status_changed_to,status_change_time,description,request_log_id});
+		temp.update("update Training_Request_Log set status_changed_to=?,"
+				+ "status_change_time=?,description=? where request_log_id=?", 
+				new Object[]{status_changed_to,status_change_time,description,request_log_id});
 	}
 	public void insertRequestLog(int training_request_id,int status_changed_to,
 			Timestamp status_change_time,String description)
