@@ -72,9 +72,9 @@
     const article = document.querySelector(".approval");
 
     if ((article.dataset.dec) == "approved") {
-        $(".approval").css("background-color", "#7FFF00");
+        $("#PMCheck").css({"color": "#7FFF00" }) 
     } else {
-        $(".approval").css("background-color", "Red");
+        $("#PMCheck").css({"color": "#FF0000" }) 
         $("input").prop('disabled', true);
     }
 
