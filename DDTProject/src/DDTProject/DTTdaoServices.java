@@ -11,7 +11,7 @@ public class DTTdaoServices {
 	
 	public List<DTTProcessingCard> getRequestsProcessing()
 	{
-		String query = "SELECT tr.training_request_id, e.last_name, e.first_name, tr.request_training_type, tr.request_training_module, tr.request_training_module_scope, tr.request_start_date, tr.request_end_date, tr.request_location, tr.request_approx_participant FROM training_request tr INNER JOIN employee e ON tr.requester_id = e.employee_id";
+		String query = "SELECT tr.training_request_id, e.last_name, e.first_name, tr.request_training_type, tr.request_training_module, tr.request_training_module_scope, tr.request_start_date, tr.request_end_date, tr.request_location, tr.request_approx_participant FROM training_request tr INNER JOIN employee e ON tr.requester_id = e.employee_id INNER JOIN training_management_status tms ON tms.training_request_id = tr.training_request_id where tms.status > 100";
 		return temp.query(query, new DTTProcessingCardMapper());
 	}
 	
