@@ -13,63 +13,35 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/annotations-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/aopalliance.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/aspectj-1.6.10-src.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/aspectjweaver.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/catalina.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/catalina-ant.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/catalina-ha.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/catalina-storeconfig.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/catalina-tribes.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/ecj-4.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/el-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jasper.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jasper-el.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jaspic-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jsp-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jstl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jstl-1.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jstl-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/jstl-impl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/ojdbc5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/ojdbc6_g.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/org-apache-commons-logging.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/org-netbeans-libs-cglib.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-aop-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-aspects-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-beans-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-build-src-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-context-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-context-support-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-core-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-expression-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-framework-bom-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-instrument-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-instrument-tomcat-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-jdbc-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-jms-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-orm-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-oxm-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-struts-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-test-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-tx-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-web-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-webmvc-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/spring-webmvc-portlet-3.2.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-coyote.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-dbcp.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-i18n-es.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-i18n-fr.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-i18n-ja.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-jdbc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-jni.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-util.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-util-scan.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/tomcat-websocket.jar"/>
-	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jars/websocket-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jstl/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jstl/jstl-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jstl/jstl-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Desktop/jstl/jstl-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/syntel/Documents/RamirezJesus/drivers/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/catalina-storeconfig.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/ecj-4.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/jaspic-api.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-jni.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-util-scan.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/tomcat-websocket.jar"/>
+	<classpathentry kind="lib" path="C:/Training software 64 bit/apache-tomcat-9.0.0.M17/lib/websocket-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

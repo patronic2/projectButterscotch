@@ -540,7 +540,7 @@
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
 			<br>
-
+			<c:forEach>
 			<div class="card exec-card">
 				<div class="card-header exec-card-header">
 
@@ -636,6 +636,7 @@
 					</div>
 				</div>
 			</div>
+			</c:forEach>
 		</div>
 	</div>
 
