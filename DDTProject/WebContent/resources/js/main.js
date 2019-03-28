@@ -72,9 +72,10 @@ $(function () {
     const article = document.querySelector(".approval");
 
     if ((article.dataset.dec) == "approved") {
-        $(".approval").css({"border": "5px solid #7FFF00" }) 
+        $("#PMCheck").css({"color": "#7FFF00" }) 
     } else {
-        $(".approval").css({"border": "5px solid #FF0000" }) 
+        $("#PMCheck").css({"color": "#FF0000" }) 
+
         $("input").prop('disabled', true);
     }
 })
