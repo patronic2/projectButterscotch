@@ -155,18 +155,19 @@
 	<form class="form-inline">
 		<select name="Filters" style="border-radius: 0%" id="filterList"
 			class="form-control">
-			<option value=".pmname">Trainer Name</option>
+			<option value=".pmname">Project Manager</option>
 			<option value=".location">Location</option>
 			<option value=".trainingType">Training Type</option>
 			<option value=".startDate">Start Date</option>
-			<option value=".groupSize">groupSize</option>
-		</select> <input class="form-control tst" style="border-radius: 0%;"
+			<option value=".groupSize">Group Size</option>
+			<option value=".requestId">Request ID</option>
+		</select> <input class="form-control navsearch" style="border-radius: 0%;"
 			type="text" placeholder="Search">
 
 	</form>
 	<div class="Collapse navbar-collapse justify-content-end">
 		<button class="openbtn" onclick="openNav()" title="Executive View">
-			☰</button>
+			<i class="fas fa-angle-double-left"></i></button>
 	</div>
 
 	</nav>
@@ -250,7 +251,7 @@
 
 				<c:forEach var="requests" items="${TRM_DTT_Homepage}" varStatus="index">
 					<div class="card proc-card proc-card-a">
-						<div class="card-header">${requests.requestId}
+						<div class="card-header requestId">${requests.requestId}
 							<button type="button" class="summary-btn danger" href='#'
 								id="popover" data-html="true" data-toggle="popover"
 								data-trigger="hover" title="Summary"
@@ -279,8 +280,13 @@
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-user"
 										title="Project Manager"></i></td>
+<<<<<<< HEAD
 									<td class="pmname"><p>${requests.firstName}</p> 
 										${requests.lastName}</td>
+=======
+									<td class="pmname">${requests.firstName} ${requests.lastName}</td>
+
+>>>>>>> 1624e2fe39a0e87f98a87238605332c9206a1256
 									<td rowspan="5" class="align-bottom"><button type="button"
 											class="btn btn-primary proc-btn" data-toggle="modal"
 											data-target="#edit_steps${requests.requestId}">Edit</button></td>
@@ -355,14 +361,14 @@
 												<div class="col-sm-6">
 
 
-													<ul id="accordion" class="accordion">
+              <ul id="accordion" class="accordion">
                 <li>
                   <div class="link"><i class="fa fa-database"></i>S.D.T.T.<i class="fa fa-chevron-down"></i></div>
                   <ul class="submenu">
                     <!--   Trainer Confirmation -->
                     <li>
-                      <table>
-                        <tr>
+                      
+                        
                          <div class= "stupidLeft">
                             <i class="hfas fas fa-user-tie"><label>Trainer</label></i>
                          </div> 
@@ -374,39 +380,26 @@
                             </datalist>
                             <input class = "trainerList" type="text" name="trainer" list="trainerdatalist" />
                           </div>
-						  </tr>
-                        <tr>
-                          <td>
-                            <i class="hfas fas fa-check"><label>Trainer Acceptance</label></i>
-                          </td>
-                          <td>
-                            <input type="checkbox" />
-                          </td>
-                        </tr>
-
-                      </table>
+                          <div class= "stupid1" style="float:left">
+                            <i class="hfas fas fa-check" style="padding-right:50px"><label>Trainer Acceptance</label></i>
+                          </div>
+						  <div class= "stupid2" style="float:left">
+                         <input type="checkbox" />
+						</div>
                     </li>
                     <!--   Schedule Confirmation  -->
-																
-						<li>
-                      <table>
-					                              <tr>	
-												  
-							<div class = "justwork">
-					<label>Start</label>		</div>
-							<div class = "justworkdate">
-                            <input type="text" class="datepicker">
-							
+					 <li>
+								  
+					<div class = "row"> 
+					<div class = "block"> <label>Start</label></div>	
+                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
 							</div>
-							</tr>
-                            <tr>					
-							<div class = "justwork">
-					<label>End</label>		</div>
-							<div class = "justworkdate">
-                            <input type="text" class="datepicker">
-
+                            					
+							<div class = "row"> 
+					<div class = "block"> <label>End</label></div>	
+                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
 							</div>
-							</tr>
+						<table>
 						<tr><td style="width:100%">
 						  <div class="checkboxes">
                           <label><input type="checkbox" name="Classroom" value="classroom"> Classroom</label>
@@ -420,7 +413,7 @@
 				
                 <li>
 				
-                  <div class="link approval" data-dec="approved"><i class="fa fa-code"></i>P.M. Approved</div>
+                  <div class="link approval" data-dec="approved"><i class="hfas fas fa-check" style="font-size:25px;" id="PMCheck"></i>P.M. Approved</div>
 
                 </li>
 				
@@ -431,7 +424,7 @@
 					<div class = "container">
                       <table>
                         <tr>
-                            <i class="hfas fas fa-map-marker" title="Location">Enter Location</i>
+                            <i class="hfas fas fa-map-marker" title="Location"><label style="font-size:18px;">Enter Location</label></i>
                         </tr>
                         <tr>
                           <td align = "right">
@@ -463,11 +456,11 @@
 							<td align = "left"><input type="text" /></td>
 							</tr>
                       </table>
-																	                      <br>
+                      <br>
                       <table>
                         <tr>
                           
-                            <i class="hfas fas fa-book">Enter Room Number</i>
+                            <i class="hfas fas fa-book"><label style="font-size:18px;">Enter Room Number</label></i>
                           
                         </tr>
                         <tr>
@@ -476,14 +469,13 @@
 						  <td align = "left"><input type="text"/></td>
                         </tr>
                       </table>
-					  
                       <br>
                      
 
-                        <table>
+ <table>
                           <tr>
                             
-                              <i class="hfas fas fa-desktop" title="Online">Enter Class URL</i>
+                              <i class="hfas fas fa-desktop" title="Online"><label style="font-size:18px;">Enter Class URL</label></i>
                             
                           </tr>
                           <tr>
@@ -500,8 +492,11 @@
                         <table>
                           <tr>
                             <td>
-                              <i class="hfas fas">Training Summary: <br><br><textarea style="height: 140px"></textarea></i>
-
+                              <i class="hfas fas">
+							  <label style="font-size:18px;">Training Summary:</label></i> 
+							  <br>
+							  <div style="padding-bottom:20px;"><textarea style="width:100%; padding-bottom=50px;"></textarea>
+							  </div>
                             </td>
                           </tr>
                         </table>
@@ -598,7 +593,7 @@
     </script>
 
 		<div class="container">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
 
 			<br>
 			<c:forEach var="wf" items="${TRM_DTT_Homepage3}">
@@ -681,7 +676,7 @@
 							<input type="checkbox" class="wfcl" name="training_completed" value="0" /> Training Completed<br>
 						</c:if>
 						
-							<input type="submit" label="Save" />
+							<input type="submit" label="Save" value="Save" class="btn btn-primary btn-wf" />
 						</form>
 					<script>
 					$(document).ready(function() {

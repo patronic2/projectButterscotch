@@ -72,12 +72,30 @@ $(function () {
     const article = document.querySelector(".approval");
 
     if ((article.dataset.dec) == "approved") {
-        $(".approval").css({"border": "5px solid #7FFF00" }) 
+        $("#PMCheck").css({"color": "#7FFF00" }) 
     } else {
-        $(".approval").css({"border": "5px solid #FF0000" }) 
+        $("#PMCheck").css({"color": "#FF0000" }) 
+
         $("input").prop('disabled', true);
     }
 })
+
+
+$(document).ready(function() {
+	$(".navsearch").keyup(function(){
+		$(".proc-card").show();
+		var input=$(".navsearch").val();
+		
+		var type=$("#filterList").val();
+		//console.log(type);
+		$(".proc-card").each(function(){
+			if(!$(this).find(type).text().includes(input) && input !=""){
+				$(this).hide();
+			}
+			
+		})
+	})
+});
 
 
 // $(document).ready(function(){
