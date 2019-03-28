@@ -32,4 +32,5 @@ public class InProcessCardDAO
 		return InProcessCardList;
 	}
 	
+	
 }
