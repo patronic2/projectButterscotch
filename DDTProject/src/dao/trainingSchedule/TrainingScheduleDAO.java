@@ -11,17 +11,18 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class TrainingScheduleDAO 
 {
 	ApplicationContext context;
-	public JdbcTemplate temp;
+	JdbcTemplate temp;
+	
 	public TrainingScheduleDAO()
 	{
 		context = new ClassPathXmlApplicationContext("spring-config.xml");
 		temp = (JdbcTemplate)context.getBean("jtemp");
 	}
-	public List<TrainingSchedule> getTrainingSchedule()
+	public List<TrainingSchedule> getTrainingScheduleList()
 	{
-		List<TrainingSchedule> trainingScheduleList =  temp.query("select * from Training_Schedule", 
-				new Object[]{},new TrainingScheduleMapper());
-		return trainingScheduleList;
+		String query = "select * from Training_Schedule";
+		
+		return   temp.query(query, new TrainingScheduleMapper());
 	}
 	public void updateTrainingRequest(int training_schedule_id, String training_city, 
 			String training_state, String training_country,	int training_zipcode, 
@@ -61,5 +62,11 @@ public class TrainingScheduleDAO
 		List<TrainingSchedule> trainingSchedule =  temp.query("select * from Training_Schedule where training_schedule_id=?", 
 				new Object[]{training_schedule_id},new TrainingScheduleMapper());
 		return trainingSchedule.get(0);
+	}
+	
+	public static void main(String[] args) {
+		TrainingScheduleDAO obj = new TrainingScheduleDAO();
+		System.out.println(obj + "----------------------------------------------");
+		System.out.println(obj.getTrainingSchedule(10000));
 	}
 }
