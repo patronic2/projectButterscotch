@@ -22,13 +22,5 @@ public class DTTdaoServices {
 		String query = "SELECT tr.training_request_id, e.last_name, e.first_name, tr.request_training_module FROM training_request tr INNER JOIN employee e ON tr.requester_id = e.employee_id INNER JOIN training_management_status tms ON tms.training_request_id = tr.training_request_id where tms.status = 100";
 		return temp.query(query, new DTTNewRequestCardMapper());
 	}
-	public List<TrainingSchedule> getTrainingSchedule()
-	{
-		String query = "select * from Training_Schedule";
-		return temp.query(query, new TrainingScheduleMapper());
-	}
 	
-	public static void main(String[] args) {
-		System.out.println(new DTTdaoServices().getTrainingSchedule());
-	}
 }
