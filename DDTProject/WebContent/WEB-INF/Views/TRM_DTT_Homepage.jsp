@@ -279,7 +279,7 @@
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-user"
 										title="Project Manager"></i></td>
-									<td class="pmname"><p>hello</p> 
+									<td class="pmname"><p>${requests.firstName}</p> 
 										${requests.lastName}</td>
 									<td rowspan="5" class="align-bottom"><button type="button"
 											class="btn btn-primary proc-btn" data-toggle="modal"
