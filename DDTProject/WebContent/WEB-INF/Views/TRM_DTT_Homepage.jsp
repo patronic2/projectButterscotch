@@ -356,14 +356,14 @@
 												<div class="col-sm-6">
 
 
-													<ul id="accordion" class="accordion">
+              <ul id="accordion" class="accordion">
                 <li>
                   <div class="link"><i class="fa fa-database"></i>S.D.T.T.<i class="fa fa-chevron-down"></i></div>
                   <ul class="submenu">
                     <!--   Trainer Confirmation -->
                     <li>
-                      <table>
-                        <tr>
+                      
+                        
                          <div class= "stupidLeft">
                             <i class="hfas fas fa-user-tie"><label>Trainer</label></i>
                          </div> 
@@ -375,39 +375,26 @@
                             </datalist>
                             <input class = "trainerList" type="text" name="trainer" list="trainerdatalist" />
                           </div>
-						  </tr>
-                        <tr>
-                          <td>
-                            <i class="hfas fas fa-check"><label>Trainer Acceptance</label></i>
-                          </td>
-                          <td>
-                            <input type="checkbox" />
-                          </td>
-                        </tr>
-
-                      </table>
+                          <div class= "stupid1" style="float:left">
+                            <i class="hfas fas fa-check" style="padding-right:50px"><label>Trainer Acceptance</label></i>
+                          </div>
+						  <div class= "stupid2" style="float:left">
+                         <input type="checkbox" />
+						</div>
                     </li>
                     <!--   Schedule Confirmation  -->
-																
-						<li>
-                      <table>
-					                              <tr>	
-												  
-							<div class = "justwork">
-					<label>Start</label>		</div>
-							<div class = "justworkdate">
-                            <input type="text" class="datepicker">
-							
+					 <li>
+								  
+					<div class = "row"> 
+					<div class = "block"> <label>Start</label></div>	
+                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
 							</div>
-							</tr>
-                            <tr>					
-							<div class = "justwork">
-					<label>End</label>		</div>
-							<div class = "justworkdate">
-                            <input type="text" class="datepicker">
-
+                            					
+							<div class = "row"> 
+					<div class = "block"> <label>End</label></div>	
+                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
 							</div>
-							</tr>
+						<table>
 						<tr><td style="width:100%">
 						  <div class="checkboxes">
                           <label><input type="checkbox" name="Classroom" value="classroom"> Classroom</label>
@@ -421,7 +408,7 @@
 				
                 <li>
 				
-                  <div class="link approval" data-dec="approved"><i class="fa fa-code"></i>P.M. Approved</div>
+                  <div class="link approval" data-dec="approved"><i class="hfas fas fa-check" style="font-size:25px;" id="PMCheck"></i>P.M. Approved</div>
 
                 </li>
 				
@@ -432,7 +419,7 @@
 					<div class = "container">
                       <table>
                         <tr>
-                            <i class="hfas fas fa-map-marker" title="Location">Enter Location</i>
+                            <i class="hfas fas fa-map-marker" title="Location"><label style="font-size:18px;">Enter Location</label></i>
                         </tr>
                         <tr>
                           <td align = "right">
@@ -464,11 +451,11 @@
 							<td align = "left"><input type="text" /></td>
 							</tr>
                       </table>
-																	                      <br>
+                      <br>
                       <table>
                         <tr>
                           
-                            <i class="hfas fas fa-book">Enter Room Number</i>
+                            <i class="hfas fas fa-book"><label style="font-size:18px;">Enter Room Number</label></i>
                           
                         </tr>
                         <tr>
@@ -477,14 +464,13 @@
 						  <td align = "left"><input type="text"/></td>
                         </tr>
                       </table>
-					  
                       <br>
                      
 
-                        <table>
+ <table>
                           <tr>
                             
-                              <i class="hfas fas fa-desktop" title="Online">Enter Class URL</i>
+                              <i class="hfas fas fa-desktop" title="Online"><label style="font-size:18px;">Enter Class URL</label></i>
                             
                           </tr>
                           <tr>
@@ -501,8 +487,11 @@
                         <table>
                           <tr>
                             <td>
-                              <i class="hfas fas">Training Summary: <br><br><textarea style="height: 140px"></textarea></i>
-
+                              <i class="hfas fas">
+							  <label style="font-size:18px;">Training Summary:</label></i> 
+							  <br>
+							  <div style="padding-bottom:20px;"><textarea style="width:100%; padding-bottom=50px;"></textarea>
+							  </div>
                             </td>
                           </tr>
                         </table>
