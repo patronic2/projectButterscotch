@@ -80,6 +80,16 @@ $(function () {
     }
 })
 
+//button SearchById value
+$(document).ready(function(){
+    $("#EmpId").click(function(){
+        var me = $( "#itV" ).val();
+		alert(me);
+		
+		//If-Else logic for found data on search
+
+    }); 
+}); 
 
 $(document).ready(function() {
 	$(".navsearch").keyup(function(){
