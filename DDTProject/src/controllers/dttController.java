@@ -22,6 +22,7 @@ import dao.dtt.inTrainingCard.InTrainingCardDAO;
 import dao.executiveWorkflowStatus.ExecutiveWorkflow;
 import dao.executiveWorkflowStatus.ExecutiveWorkflowDAO;
 import dao.trainingManagementStatus.ManagmentStatusDAO;
+import dao.trainingRequest.TrainingRequest;
 import dao.trainingRequest.TrainingRequestDAO;
 import dao.trainingSchedule.TrainingSchedule;
 import dao.trainingSchedule.TrainingScheduleDAO;
@@ -39,13 +40,13 @@ public class dttController {
 	@RequestMapping(value = "/")
 	public String showall_view(ModelMap map) {
 		List<InProcessCard> inProcess;
-		List<DTTNewRequestCard> newReqCards;
+		List<TrainingRequest> newReqCards;
 
 		List<ExecutiveWorkflow> wfCards;
 		List<InTrainingCard> itc;
 
 		inProcess = new InProcessCardDAO().getInProcessCardList();
-		newReqCards = new DTTdaoServices().getNewRequests();
+		newReqCards = new TrainingRequestDAO().getTrainingRequests();
 		wfCards = new ExecutiveWorkflowDAO().getExecutiveWorkflows();
 		itc = new InTrainingCardDAO().getInTrainingCardList();
 		

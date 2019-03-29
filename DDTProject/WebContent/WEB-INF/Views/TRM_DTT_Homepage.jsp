@@ -156,11 +156,11 @@
 		<select name="Filters" style="border-radius: 0%" id="filterList"
 			class="form-control">
 			<option value=".pmname">Project Manager</option>
-			<option value=".location">Location</option>
+			<option value=".request_location">Location</option>
 			<option value=".trainingType">Training Type</option>
-			<option value=".startDate">Start Date</option>
+			<option value=".request_start_date">Start Date</option>
 			<option value=".groupSize">Group Size</option>
-			<option value=".requestId">Request ID</option>
+			<option value=".training_request_id">Request ID</option>
 		</select> <input class="form-control navsearch" style="border-radius: 0%;"
 			type="text" placeholder="Search">
 
@@ -188,61 +188,7 @@
 		<div class="row">
 			<div class="col-sm-2">
 				<!--------------------------------- NEW REQUESTS ----------------------------------->
- <c:forEach var="newReqs" items="${TRM_DTT_Homepage1}">
-        <div>
-          <table class="newTrainTable1" border="4px" width='180px' style="border-radius: 9px; border-color:royalblue; box-shadow: -5px 5px grey">
 
-            <tr>
-              <td style="border: 0;" align="center">Training: ${newReqs.trainingModule}</td>
-            </tr>
-            <tr>
-              <td style="border: 0" height="30px"><img width='20px' height='20px' src='./resources/images/PM2.jpg'>: ${newReqs.firstName} 
-              
-              <a href="#" data-toggle="modal" data-target="#Process${newReqs.requestId}"><img width='20px' height='20px' src='./resources/images/rightTriangle.png'> </a></td>
-            </tr>
-            
-            <tr>
-            <td colspan="3">
-					<div class="modal" id="Process${newReqs.requestId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabelUpdate">
-						<div class="modal-dialog modal-dialog-centered" role="document">
-							<div class="modal-content">
-
-								<div class="modal-header">
-									<h4 class="modal-title" id="myModalLabelDelete">Choose Training Type</h4>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-								</div>
-
-								<!-- Modal body -->
-								<div class="modal-body">
-									<c:catch>
-										<form action="toProcess/${newReqs.requestId}">
-											<input type="submit" class="btn btn-primary" value="DTT" /><br>
-										</form>
-
-										<form action="#">
-											<input type="submit" class="btn btn-primary" value="ITT" /><br>
-										</form>
-										<form action="#">
-											<input type="submit" class="btn btn-primary" value="VTT" /><br>
-										</form>
-									</c:catch>
-								</div>
-
-								<!-- Modal footer -->
-								<div class="modal-footer">
-
-									<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
-								</div>
-							</div>
-						</div>
-					</div>
-				</td>
-            </tr>
-          </table>
-          <br>
-          
-        </div>
-        </c:forEach>
 			</div>
 
 
@@ -251,19 +197,19 @@
 
 				<c:forEach var="inProcess" items="${inProcessList}">
 					<div class="card proc-card proc-card-a">
-						<div class="card-header requestId">${inProcess.request.requestId}
+						<div class="card-header requestId">${inProcess.request.training_request_id}
 							<button type="button" class="summary-btn danger" href='#'
 								id="popover" data-html="true" data-toggle="popover"
 								data-trigger="hover" title="Summary"
 								data-content='
                          <div class="card proc-card">
-    <div class="card-header">2 ${inProcess.request.requestId}
+    <div class="card-header">${inProcess.request.training_request_id}
 </div>
     <div class="card-body proc-card-body">
-      <i class="fas fa-chalkboard-teacher" title="Training"></i> <span id="summary-training">${0}</span><br>
-      <i class="fas fa-user" title="Project Manager"></i> <span id="summary-pm">${inProcess.request.firstName} ${inProcess.request.lastName}</span><br>
-      <i class="fas fa-calendar-alt" title="Start Date"></i> <span id="summary-start-date">${inProcess.request.startDate} - ${inProcess.request.endDate}</span><br>
-      <i class="fas fa-map-marker-alt" title="Location"></i> <span id="summary-location">${inProcess.request.location}</span><br>
+      <i class="fas fa-chalkboard-teacher" title="Training"></i> <span id="summary-training">${inProcess.request.training_request_id}</span><br>
+      <i class="fas fa-user" title="Project Manager"></i> <span id="summary-pm">${inProcess.projectManager.first_name} ${inProcess.projectManager.last_name}</span><br>
+      <i class="fas fa-calendar-alt" title="Start Date"></i> <span id="summary-start-date">${inProcess.request.request_start_date} - ${inProcess.request.request_end_date}</span><br>
+      <i class="fas fa-map-marker-alt" title="Location"></i> <span id="summary-location">${inProcess.request.request_location}</span><br>
       <i class="fas fa-globe" title="Country"></i> <span id="summary-country">USA</span><br>
       <hr>
       <i class="fas fa-building" title="Room Number"></i> <span id="summary-room-no">Plaza Ballroom I</span>
@@ -281,32 +227,32 @@
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-user"
 										title="Project Manager"></i></td>
-									<td class="pmname">${inProcess.request.firstName} ${inProcess.request.lastName}</td>
+									<td class="pmname">${inProcess.projectManager.first_name} ${inProcess.projectManager.last_name}</td>
 
 									<td rowspan="5" class="align-bottom"><button type="button"
 											class="btn btn-primary proc-btn" data-toggle="modal"
-											data-target="#edit_steps${inProcess.request.requestId}">Edit</button></td>
+											data-target="#edit_steps${inProcess.request.training_request_id}">Edit</button></td>
 								</tr>
 								<tr>
 									<td class="proc-card-icon-col"><i
 										class="fas fa-chalkboard-teacher" title="Training"></i></td>
-									<td class="trainingType">${inProcess.request.trainingType}:
-										${inProcess.request.trainingModule} (${inProcess.request.trainingModuleScope})</td>
+									<td class="trainingType">${inProcess.request.request_training_type}:
+										${inProcess.request.request_training_module} (${inProcess.request.request_training_module_scope})</td>
 								</tr>
 								<tr>
 									<td class="proc-card-icon-col"><i
 										class="fas fa-calendar-alt" title="Start Date"></i></td>
-									<td class="startDate">${inProcess.request.startDate}</td>
+									<td class="request_start_date">${inProcess.request.request_start_date}</td>
 								</tr>
 								<tr>
 									<td class="proc-card-icon-col"><i class="fas fa-users"
 										title="Number of Participants"></i></td>
-									<td class="groupSize">${inProcess.request.approxParticipants}</td>
+									<td class="groupSize">${inProcess.request.request_approx_participant}</td>
 								</tr>
 								<tr>
 									<td class="proc-card-icon-col"><i
 										class="fas fa-map-marker-alt" title="Location"></i></td>
-									<td class="location">${inProcess.request.location}</td>
+									<td class="location">${inProcess.request.request_location}</td>
 								</tr>
 							</table>
 
@@ -318,7 +264,7 @@
 										<i class="fas fa-chalkboard-teacher" title="Training"></i> <span
 											id="summary-training">Java</span><br> <i
 											class="fas fa-user" title="Project Manager"></i> <span
-											id="summary-pm">${inProcess.request.firstName}</span><br> <i
+											id="summary-pm">${inProcess.projectManager.first_name}</span><br> <i
 											class="fas fa-calendar-alt" title="Start Date"></i> <span
 											id="summary-start-date">02/13/2019 - 04/05/2019</span><br>
 										<i class="fas fa-map-marker-alt" title="Location"></i> <span
@@ -342,7 +288,7 @@
 								</div>
 							</div>
 
-							<div class="modal" id="edit_steps${inProcess.request.requestId}">
+							<div class="modal" id="edit_steps${inProcess.request.training_request_id}">
 								<div class="modal-dialog modal-dialog-centered modal-lg">
 									<div class="modal-content">
 
@@ -426,30 +372,28 @@
                           <td align = "right">
                             <label class="location">City: </label>
 							</td>
-							<td>
-						
-							</td>
-							<td align = "left"><input type="text"  value="" /></td>
+			
+							<td align = "left"><input type="text"  value="${inProcess.schedule.training_city}" /></td>
 						</tr>
                             
 						<tr>
 						<td align = "right">
 							<label class="location">State: </label>
 							</td>
-							<td align = "left"><input type="text" /></td>
+							<td align = "left"><input type="text" value="${inProcess.schedule.training_state}" /></td>
                         </tr>
 							
 							<tr>
 							<td align = "right">
                             <label class="location">Country: </label>
 							</td>
-							<td align = "left"><input type="text" /></td>
+							<td align = "left"><input type="text" value="${inProcess.schedule.training_country}" /></td>
 							</tr>
                             
 							<tr>
 							<td align = "right">
                             <label class="location">Zip: </label></td>
-							<td align = "left"><input type="text" /></td>
+							<td align = "left"><input type="text" value="${inProcess.schedule.training_zipcode}"/></td>
 							</tr>
                       </table>
                       <br>
@@ -504,19 +448,19 @@
             </div>
 												<div class="col-sm-6">
 													<div class="card proc-card">
-														<div class="card-header">${inProcess.request.requestId}</div>
+														<div class="card-header">${inProcess.request.training_request_id}</div>
 														<div class="card-body proc-card-body">
 															<i class="fas fa-chalkboard-teacher" title="Training"></i>
-															${inProcess.request.trainingType}: ${inProcess.request.trainingModule}
-															(${inProcess.request.trainingModuleScope})<br> <i
+															${inProcess.request.request_training_type}: ${inProcess.request.request_training_module}
+															(${inProcess.request.request_training_module_scope})<br> <i
 																class="fas fa-user" title="Project Manager"></i>
-															${inProcess.request.firstName} ${inProcess.request.lastName}<br> <i
+															${inProcess.projectManager.first_name} ${inProcess.projectManager.last_name}<br> <i
 																class="fas fa-calendar-alt" title="Dates"></i>
-															${inProcess.request.startDate} - ${inProcess.request.endDate}<br> <i
+															${inProcess.request.request_start_date} - ${inProcess.request.request_end_date}<br> <i
 																class="fas fa-map-marker-alt" title="Location"></i> <span
 																style="font-style: italic">(Address)</span><br> <i
 																class="fas fa-globe" title="Country"></i>
-															${inProcess.request.location}<br>
+															${inProcess.request.request_location}<br>
 
 															<hr>
 															<i class="fas fa-building" title="Room Number"></i> <span
