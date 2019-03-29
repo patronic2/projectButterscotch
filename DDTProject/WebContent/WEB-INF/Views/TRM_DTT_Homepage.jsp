@@ -300,150 +300,125 @@
 										<!-- Modal body -->
 										<div class="modal-body">
 											<div class="row">
-												<div class="col-sm-6">
+		<div class="col-sm-6">
 
 
               <ul id="accordion" class="accordion">
-                <li>
-                  <div class="link"><i class="fa fa-database"></i>S.D.T.T.<i class="fa fa-chevron-down"></i></div>
-                  <ul class="submenu">
-                    <!--   Trainer Confirmation -->
-                    <li>
-                      
-                        
-                         <div class= "stupidLeft">
+	<li>
+    <div class="link"><i class="fa fa-database"></i><label>Web Design</label><i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li>
+	                           
                             <i class="hfas fas fa-user-tie"><label>Trainer</label></i>
-                         </div> 
-						    <div class = "stupidRight" style="padding-left:10px">
+                          
+						    
                             <datalist id="trainerdatalist">
                               <option value="Mahesh Rajput"></option>
                               <option value="Some Guy"></option>
                               <option value="Copyrighted Character"></option>
                             </datalist>
-                            <input class = "trainerList" type="text" name="trainer" list="trainerdatalist" />
-                          </div>
-                          <div class= "stupid1" style="float:left">
-                            <i class="hfas fas fa-check" style="padding-right:50px"><label>Trainer Acceptance</label></i>
-                          </div>
-						  <div class= "stupid2" style="float:left">
-                         <input type="checkbox" />
-						</div>
-                    </li>
-                    <!--   Schedule Confirmation  -->
-					 <li>
-								  
-					<div class = "row"> 
-					<div class = "block"> <label>Start</label></div>	
-                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
-							</div>
-                            					
-							<div class = "row"> 
-					<div class = "block"> <label>End</label></div>	
-                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
-							</div>
-						<table>
-						<tr><td style="width:100%">
-						  <div class="checkboxes">
-                          <label><input type="checkbox" name="Classroom" value="classroom"> Classroom</label>
-                          <label><input type="checkbox" name="Online" value="online"> Online</label>
-                          <label><input type="checkbox" name="Virtual" value="classroom"> Virtual</label>
-						  </div></td></tr>
-                      </table>
-                    </li>
-                  </ul>
-                </li>
-				
-                <li>
-				
-                  <div class="link approval" data-dec="approved"><i class="hfas fas fa-check" style="font-size:25px;" id="PMCheck"></i>P.M. Approved</div>
-
-                </li>
-				
-                <li>
-                  <div class="link"><i class="fas fa-cloud"></i>Logistics<i class="fa fa-chevron-down"></i></div>
-                  <ul class = "submenu">
-                    <form>
-					<div class = "container">
-                      <table>
-                        <tr>
-                            <i class="hfas fas fa-map-marker" title="Location"><label style="font-size:18px;">Enter Location</label></i>
-                        </tr>
-                        <tr>
-                          <td align = "right">
-                            <label class="location">City: </label>
-							</td>
-			
-							<td align = "left"><input type="text"  value="${inProcess.schedule.training_city}" /></td>
-						</tr>
-                            
-						<tr>
-						<td align = "right">
-							<label class="location">State: </label>
-							</td>
-							<td align = "left"><input type="text" value="${inProcess.schedule.training_state}" /></td>
-                        </tr>
-							
-							<tr>
-							<td align = "right">
-                            <label class="location">Country: </label>
-							</td>
-							<td align = "left"><input type="text" value="${inProcess.schedule.training_country}" /></td>
-							</tr>
-                            
-							<tr>
-							<td align = "right">
-                            <label class="location">Zip: </label></td>
-							<td align = "left"><input type="text" value="${inProcess.schedule.training_zipcode}"/></td>
-							</tr>
-                      </table>
-                      <br>
-                      <table>
-                        <tr>
+                            <input class = "trainerList" type="text" id="trainer" list="trainerdatalist" />
                           
-                            <i class="hfas fas fa-book"><label style="font-size:18px;">Enter Room Number</label></i>
+	  </li>
+	  <!-- Search By ID -->
+	  <li>
+<label style="padding-left:0px">Search Employee By ID:</label>
+<input type="text" id="itV" />
+<input type="button" id="EmpId" style="font-size : 14px;height:25px;width:70px;" value="Search">
+<br>
+	  </li>
+	  
+      <li>
+                        <ul id="accordion" class="accordion">
+	<li>
+    <div class="link"><i class="fa fa-database"></i><label>Web Design</label><i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li>
+	                           
+                            <i class="hfas fas fa-user-tie"><label>Trainer</label></i>
                           
-                        </tr>
-                        <tr>
-                          <td align = "right">
-						  <label class="location" style="padding-left:68px"></label>	</td>
-						  <td align = "left"><input type="text"/></td>
-                        </tr>
-                      </table>
-                      <br>
-                     
+						    
+                            <datalist id="trainerdatalist">
+                              <option value="Mahesh Rajput"></option>
+                              <option value="Some Guy"></option>
+                              <option value="Copyrighted Character"></option>
+                            </datalist>
+                            <input class = "trainerList" type="text" id="trainer" list="trainerdatalist" />
+                          
+	  </li>
+	  <!-- Search By ID -->
+	  <li>
+<label style="padding-left:0px">Search Employee By ID:</label>
+<input type="text" id="itV" />
+<input type="button" id="EmpId" style="font-size : 14px;height:25px;width:70px;" value="Search">
+<br>
+	  </li>
+	  
+      <li>
+       <div class="link approval" data-dec="approved"><i class="hfas fas fa-check" style="font-size:25px;" id="PMCheck"></i><label>P.M. Approved</label></div>
 
- <table>
-                          <tr>
-                            
-                              <i class="hfas fas fa-desktop" title="Online"><label style="font-size:18px;">Enter Class URL</label></i>
-                            
-                          </tr>
-                          <tr>
-						  <td align = "right">
-						  <label class="location" style="padding-left:68px"></label>	</td>
-                            <td align style="left">
-
-							  <input type="text"/>
-
-                            </td>
-                          </tr>
-                        </table>
-                        <br>
-                        <table>
-                          <tr>
-                            <td>
-                              <i class="hfas fas">
+  </li>
+  
+   </li>
+  <li>
+                  <div class="link"><i class="fas fa-cloud"></i><label>Logistics</label><i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><i class="hfas fas fa-map-marker" title="Location"><label style="font-size:18px;">Enter Location</label></i></li>
+	        <li>
+	   <label class="location">Address: </label>
+		<input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+      <li>
+      <li>
+	   <label class="location">City: </label>
+		<input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+      <li>
+	  							<label class="location">State: </label>
+							<input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+	  <li>
+	    <label class="location">Country: </label>
+		<input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+	  <li>
+	                              <label class="location">Zip: </label>
+								  <input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+	  <li>
+	  <i class="hfas fas fa-book"><label style="font-size:18px;">Enter Room Number</label></i>
+	  </li>
+	  <li>
+<input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+	  <li>
+	  <i class="hfas fas fa-desktop" title="Online"><label style="font-size:18px;">Enter Class URL</label></i>
+	  </li>
+	  <li>
+	  <input type="text" style="float:right;margin-inline-end: 10px;"/>
+	  </li>
+	  <li>
+	                                <i class="hfas fas">
 							  <label style="font-size:18px;">Training Summary:</label></i> 
-							  <br>
-							  <div style="padding-bottom:20px;"><textarea style="width:100%; padding-bottom=50px;"></textarea>
-							  </div>
-                            </td>
-                          </tr>
-                        </table>
-                    </form>
-					</div>
-					</li>
-                  </ul>
+	  </li>
+	  <li>
+	  <textarea style="width:96%; font-size:12px; margin-inline-end: 10px; margin-block-end: 20px;" rows=7></textarea>
+	  </li>
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+	
+					
+
+
+		<!-- Warning: Load bearing modal-->		
+                
+                 
+
               </ul>
             </div>
 												<div class="col-sm-6">
