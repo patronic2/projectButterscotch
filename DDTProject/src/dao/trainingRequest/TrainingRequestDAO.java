@@ -61,4 +61,8 @@ public class TrainingRequestDAO
 				new Object[]{training_request_id},new TrainingRequestMapper());
 		return trainingRequest.get(0);
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(new TrainingRequestDAO().getTrainingRequest(10000).getRequest_location());
+	}
 }
