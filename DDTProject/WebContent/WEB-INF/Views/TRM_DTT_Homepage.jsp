@@ -30,7 +30,6 @@
 
 <!-- Custom JS -->
 <script src="./resources/js/main.js"></script>
-<script src="./resources/css/main.js"></script>
 
 
 </head>
