@@ -29,7 +29,15 @@ public class DDTTrainerDOA
 				+ "comments=?,response=?,active_status=? where Dtt_training_id=?", 
 				new Object[]{trainer_id,schedule_id,topic,comments,response,active_status,dtt_trainer_request_id});
 	}
-	public void insertDTTrainer(int dtt_trainer_request_id,Timestamp request_sent_date,int trainer_id,
+	
+	public void updateTrainerId(int dtt_trainer_request_id,int trainer_id)
+	{
+		temp.update("update Develop_Team_Trainier_Request set trainer_id=? where Dtt_training_id=?", 
+				new Object[]{trainer_id,dtt_trainer_request_id});
+	}
+	
+	
+	public void insertDTTrainer(Timestamp request_sent_date,int trainer_id,
 			int schedule_id,String topic,String comments,String response,int active_status)
 	{
 		temp.update("insert into Develop_Team_Trainier_Request values(dtt_trainer_request_id_seq.nextval,?,?,?,?,?,?,?)",

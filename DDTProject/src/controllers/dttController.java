@@ -1,9 +1,11 @@
 package controllers;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,10 +17,14 @@ import DDTProject.DTTProcessingCard;
 import DDTProject.DTTdaoServices;
 
 import bl.SecurityCheck;
+import dao.dtt.developTeamTrainerRequest.DDTTrainerDOA;
+import dao.dtt.developTeamTrainingRequest.DDTTrainingDAO;
 import dao.dtt.inProcessCard.InProcessCard;
 import dao.dtt.inProcessCard.InProcessCardDAO;
 import dao.dtt.inTrainingCard.InTrainingCard;
 import dao.dtt.inTrainingCard.InTrainingCardDAO;
+import dao.employee.Employee;
+import dao.employee.EmployeeDAO;
 import dao.executiveWorkflowStatus.ExecutiveWorkflow;
 import dao.executiveWorkflowStatus.ExecutiveWorkflowDAO;
 import dao.trainingManagementStatus.ManagmentStatusDAO;
@@ -89,6 +95,27 @@ public class dttController {
 		update.updateManagmentStatus(requestId, stat);
 		System.out.println("updated status");
 		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "updateTrainer")
+	public String updateTrainer(@ModelAttribute("employee") Employee employee)
+	{
+		Integer scheduleId = (Integer) TrainingScheduleDAO.keyHolder.getKey();
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		int trainerId = employee.getEmployee_id();
+		
+		System.out.println(employee.getEmployee_id());
+		new TrainingScheduleDAO().insertTrainingSchedule(null, null, null, 0, null, null, null, null, null, null, null, null);
+		new DDTTrainerDOA().insertDTTrainer(timestamp, trainerId, scheduleId, null, null, null, 0);
+//		new DDTTrainingDAO().insertDTTraining(training_request_id, trainer_request_id, TrainingScheduleDAO.keyHolder, executive_id, trainer_approval_mail, trainer_manager_approval_mail, description_of_status);
+		DDTTrainerDOA trainer = new DDTTrainerDOA().insertDTTrainer(timestamp, employee.getEmployee_id(), null, null, null, null, null);
+		System.out.println(TrainingScheduleDAO.keyHolder);
+		return "redirect:/";
+	}
+	
+	public static void main(String s[])
+	{
+		System.out.println();
 	}
 
 }

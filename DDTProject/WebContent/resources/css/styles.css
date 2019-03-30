@@ -243,9 +243,8 @@ ul { list-style-type: none; }
 .accordion li:last-child .link { border-bottom: 0; }
 
 .accordion li i {
-  position: static;
-  top: 16px;
-  left: 12px;
+  position: relative;
+  right: 30px;
   font-size: 18px;
   color: #595959;
   -webkit-transition: all 0.4s ease;
@@ -255,7 +254,6 @@ ul { list-style-type: none; }
 
 .accordion li i.fa-chevron-down {
 	float: right;
-	left: auto;
   font-size: 16px;
 }
 
@@ -282,12 +280,13 @@ ul { list-style-type: none; }
   color: white;
 }
 
+.submenu li { border-bottom: 1px solid #4b4a5e; }
+
 .submenu a {
   display: block;
   text-decoration: none;
-  color: #d9d9d9;
-  padding: 12px;
-  padding-left: 42px;
+  color: pink;
+
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -308,8 +307,7 @@ ul { list-style-type: none; }
 label {
 	display: inline-block;
 font-size: 14px;
-padding-left: 30px;
-
+padding-left: 15px;
 }
 
 /*Datepicker window*/
