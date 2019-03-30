@@ -302,32 +302,6 @@
 		<div class="col-sm-6">
 
 
-              <ul id="accordion" class="accordion">
-	<li>
-    <div class="link"><i class="fa fa-database"></i><label>Web Design</label><i class="fa fa-chevron-down"></i></div>
-    <ul class="submenu">
-      <li>
-	                           
-                            <i class="hfas fas fa-user-tie"><label>Trainer</label></i>
-                          
-						    
-                            <datalist id="trainerdatalist">
-                              <option value="Mahesh Rajput"></option>
-                              <option value="Some Guy"></option>
-                              <option value="Copyrighted Character"></option>
-                            </datalist>
-                            <input class = "trainerList" type="text" id="trainer" list="trainerdatalist" />
-                          
-	  </li>
-	  <!-- Search By ID -->
-	  <li>
-<label style="padding-left:0px">Search Employee By ID:</label>
-<input type="text" id="itV" />
-<input type="button" id="EmpId" style="font-size : 14px;height:25px;width:70px;" value="Search">
-<br>
-	  </li>
-	  
-      <li>
                         <ul id="accordion" class="accordion">
 	<li>
     <div class="link"><i class="fa fa-database"></i><label>Web Design</label><i class="fa fa-chevron-down"></i></div>
@@ -350,6 +324,50 @@
 <label style="padding-left:0px">Search Employee By ID:</label>
 <input type="text" id="itV" />
 <input type="button" id="EmpId" style="font-size : 14px;height:25px;width:70px;" value="Search">
+		  <br>
+	  </li>
+	  
+      <li>
+	  
+                            <i class="hfas fas fa-check" style="padding-right:50px"><label>Trainer Acceptance</label></i>	
+                         <input type="checkbox"/>
+						
+						</li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <div class="link"><i class="fa fa-code"></i><label>Date & Type</label><i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li>
+	  					<div class = "row"> 
+					<div class = "block"> <label>Start</label></div>	
+                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
+							</div>
+                            			
+	  </li>
+      <li>
+	  							<div class = "row"> 
+					<div class = "block"> <label>End</label></div>	
+                      <div class = "block" style="padding-left:50px"><input type="text" class="datepicker"></div>	
+							</div>
+	  </li>
+      <li>
+	  						<table>
+						<tr><td style="width:100%">
+						  <div class="checkboxes">
+                          <label><input type="checkbox" name="Classroom" value="classroom"> Classroom</label>
+                          <label><input type="checkbox" name="Online" value="online"> Online</label>
+                          <label><input type="checkbox" name="Virtual" value="classroom"> Virtual</label>
+						  </div></td></tr>
+                      </table>
+	  </li>
+    </ul>
+  </li>
+  
+  <li>
 <br>
 	  </li>
 	  
